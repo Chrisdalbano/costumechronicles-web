@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/navbar-styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
     <title>Your Costume Store</title>
-    
   </head>
   <body>
     <header>
@@ -15,7 +15,11 @@
             <!-- Navigation links go here -->
             <input type="text" class="search-bar" placeholder="Search..." />
             <div class="mg">
-              <img src="src/assets/icon.mg.png" alt="Logo" class="search-icon" />
+              <img
+                src="src/assets/icon.mg.png"
+                alt="Logo"
+                class="search-icon"
+              />
             </div>
           </div>
           <div class="logo-col">
@@ -36,7 +40,7 @@
       </nav>
     </header>
     <div class="swapper-gallery">
-      <img src="src/assets/image1.jpg" id="current-image">
+      <img src="src/assets/image1.jpg" id="current-image" />
       <button class="left-arrow" onclick="prevImage()">&#10094;</button>
       <button class="right-arrow" onclick="nextImage()">&#10095;</button>
     </div>
@@ -59,4 +63,46 @@
       </div>
     </div>
   </body>
+
+  <footer>
+    <div class="mid-col">
+      <div class="footer-container">
+        <div class="topfooter">
+          <form>
+            <input type="email" placeholder="Sign up for our newsletter" />
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+        <div class="bottomfooter">
+          <div class="social-media">
+            <a href="#"
+              ><img
+                src="src/assets/icon.instagram.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+            <a href="#"
+              ><img
+                src="src/assets/icon.facebook.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+            <a href="#"
+              ><img
+                src="src/assets/icon.twitter.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+            <a href="#"
+              ><img
+                src="src/assets/icon.pinterest.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
 </html>

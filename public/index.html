@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/navbar-styles.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/footer-styles.css" />
+    <title>Your Costume Store</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="left-col">
+            <!-- Navigation links go here -->
+            <input type="text" class="search-bar" placeholder="Search..." />
+            <div class="mg">
+              <img
+                src="../src/assets/icon.mg.png"
+                alt="Logo"
+                class="search-icon"
+              />
+            </div>
+          </div>
+          <div class="logo-col">
+            <!-- Logo goes here -->
+            <img src="../src/assets/logo2.png" alt="Logo" class="logo" />
+          </div>
+          <div class="right-col">
+            <!-- More navigation links go here -->
+            <img
+              src="../src/assets/icon.profile.png"
+              alt="Logo"
+              class="icon profile"
+            />
+            <img
+              src="../src/assets/icon.cart.png"
+              alt="Logo"
+              class="icon cart"
+            />
+            <img
+              src="../src/assets/icon.help.png"
+              alt="Logo"
+              class="icon help"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="category-sections">
+      <div class="rectangle">
+        <div class="category-container">
+          <div class="category" id="man">
+            <img src="../src/assets/men-costume-c.jpg" alt="Man's Costumes" />
+            <p>Man's Costumes</p>
+          </div>
+          <div class="category" id="women">
+            <img
+              src="../src/assets/women-costume-c.jpg"
+              alt="Women's Costumes"
+            />
+            <p>Women's Costumes</p>
+          </div>
+          <div class="category" id="kids">
+            <img src="../src/assets/kids-costume-c.jpg" alt="Kid's Costumes" />
+            <p>Kid's Costumes</p>
+          </div>
+          <div class="category" id="collectibles">
+            <img src="../src/assets/collec-costume-c.jpg" alt="Collectibles" />
+            <p>Collectibles</p>
+          </div>
+        </div>
+      </div>
+      <script src="../functions/category-form.js"></script>
+    </div>
+    <div class="swapper-gallery">
+      <img src="../src/assets/image1.jpg" id="current-image" />
+      <button class="left-arrow" onclick="prevImage()">&#10094;</button>
+      <button class="right-arrow" onclick="nextImage()">&#10095;</button>
+    </div>
+    <div class="desc-wrapper">
+      <p class="itemdesc" id="current-description">
+        This is the first description
+      </p>
+      <button class="buttondesc">Shop this now!</button>
+    </div>
+
+    <script src="../functions/swapper.js"></script>
+
+    <div class="desc-wrapper">
+      <section class="product-grid">
+        <article class="product">
+          <img src="../src/assets/items/sample-item1.png" alt="Item 1" />
+          <h3>Item 1</h3>
+          <p>$10.99</p>
+        </article>
+        <article class="product">
+          <img src="../src/assets/items/sample-item1.png" alt="Item 2" />
+          <h3>Item 2</h3>
+          <p>$9.99</p>
+        </article>
+        <article class="product">
+          <img src="../src/assets/items/sample-item1.png" alt="Item 3" />
+          <h3>Item 3</h3>
+          <p>$12.99</p>
+        </article>
+        <article class="product">
+          <img src="../src/assets/items/sample-item1.png" alt="Item 4" />
+          <h3>Item 4</h3>
+          <p>$14.99</p>
+        </article>
+        <article class="product">
+          <img src="../src/assets/items/sample-item1.png" alt="Item 5" />
+          <h3>Item 5</h3>
+          <p>$11.99</p>
+        </article>
+        <article class="product">
+          <img src="../src/assets/items/sample-item1.png" alt="Item 6" />
+          <h3>Item 6</h3>
+          <p>$15.99</p>
+        </article>
+      </section>
+      <button class="buttondesc">View more</button>
+    </div>
+  </body>
+
+  <footer>
+    <div class="mid-col">
+      <div class="footer-container">
+        <div class="topfooter">
+          <form>
+            <input type="email" placeholder="Sign up for our newsletter" />
+            
+          </form>
+        </div>
+        <div class="bottomfooter">
+          <div class="social-media">
+            <a href="#"
+              ><img
+                src="../src/assets/icon.instagram.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+            <a href="#"
+              ><img
+                src="../src/assets/icon.facebook.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+            <a href="#"
+              ><img
+                src="../src/assets/icon.twitter.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+            <a href="#"
+              ><img
+                src="../src/assets/icon.pinterest.png"
+                alt="Logo"
+                class="icon-social"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>

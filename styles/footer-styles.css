@@ -46,14 +46,14 @@ footer {
   .social-media a {
     width: 25%;
     text-align: center;
-    margin-left: 20px;
+    margin-left: 10px;
   }
   
   .icon-social {
     align-items: center;
-    width: 5%;
-    height: 5%;
-    margin: 0.5rem;
+    width: 4%;
+    height: 4%;
+    margin: 0.2rem;
   }
   
   .topfooter {

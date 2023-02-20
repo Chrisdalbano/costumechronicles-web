@@ -5,44 +5,85 @@
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
     <link rel="stylesheet" type="text/css" href="../styles/navbar-styles.css" />
     <link rel="stylesheet" type="text/css" href="../styles/footer-styles.css" />
-    <title>Your Costume Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    
+    <title>Costume Chronicles</title>
   </head>
   <body>
     <header>
-      <nav>
-        <div class="container">
+      <nav class="navbar fixed-top" style="background-color: #ffffff;">
+        <div class="container-fluid">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
+
+          <!--menu toggler-->
           <div class="left-col">
-            <!-- Navigation links go here -->
-            <input type="text" class="search-bar" placeholder="Search..." />
-            <div class="mg">
-              <img
-                src="../src/assets/icon.mg.png"
-                alt="Logo"
-                class="search-icon"
-              />
+            <button class="btn btn-outline-danger" style="font-size: 1.5em" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </button>
+          </div>
+          
+          <!--offcanvas content-->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">NEW</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    MERCHANDISE
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">MENS</a></li>
+                    <li><a class="dropdown-item" href="#">WOMENS</a></li>
+                    <li><a class="dropdown-item" href="#">KIDS</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">COLLECTIBLES</a></li>
+                  </ul>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">ORDERS & RETURNS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">OUR BRAND</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACT US</a>
+                  </li>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger" type="submit">Search</button>
+              </form>
             </div>
           </div>
+
+          <!--logo-->
           <div class="logo-col">
-            <!-- Logo goes here -->
-            <img src="../src/assets/logo2.png" alt="Logo" class="logo" />
+            <img src="../src/assets/logo.png" alt="Logo" class="logo" />
           </div>
+
+          <!--User navigation icons-->
           <div class="right-col">
-            <!-- More navigation links go here -->
-            <img
-              src="../src/assets/icon.profile.png"
-              alt="Logo"
-              class="icon profile"
-            />
-            <img
-              src="../src/assets/icon.cart.png"
-              alt="Logo"
-              class="icon cart"
-            />
-            <img
-              src="../src/assets/icon.help.png"
-              alt="Logo"
-              class="icon help"
-            />
+           <img
+             src="../src/assets/icon.profile.png"
+             alt="Logo"
+             class="icon profile"
+           />
+           <img src="../src/assets/icon.cart.png" alt="Logo" class="icon cart" />
+           <img src="../src/assets/icon.help.png" alt="Logo" class="icon help" />
           </div>
         </div>
       </nav>

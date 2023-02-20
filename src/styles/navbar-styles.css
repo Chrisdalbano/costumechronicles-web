@@ -67,3 +67,26 @@
 }
 
 
+@media (max-width: 767px) {
+  .logo {
+    width: 70%;
+    height: 70%;
+  }
+
+  .icon {
+    /* display: flex;
+      justify-content: space-between; */
+    align-items: center;
+    width: 20%;
+    height: 20%;
+    margin: 0.2rem;
+  }
+
+  .icon:hover {
+    opacity: 75%;
+    width: 22%;
+    height: 22%;
+    cursor: pointer;
+  }
+
+}

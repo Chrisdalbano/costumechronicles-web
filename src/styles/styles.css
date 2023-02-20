@@ -40,6 +40,7 @@ body {
   color: #999;
 }
 
+
 .swapper-gallery {
   position: relative;
   display: flex;
@@ -178,4 +179,38 @@ body {
 
 .desc-wrapper{
   padding-bottom: 6rem;
+}
+
+/* @media (max-width: 767px) {
+  .category-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .category {
+    width: 100%;
+  }
+} */
+
+@media (max-width: 767px) {
+  .category p{
+    font-size: 20px;
+  }
+
+  #current-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-grid {
+    display: flex-grid;
+    margin: 2rem;
+    
+  }
+
+  .product img {
+    width: 60%;
+    height: 60%;
+  }
+
 }

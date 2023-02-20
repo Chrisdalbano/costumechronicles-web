@@ -1,5 +1,5 @@
 
-![alt text](src/assets/logo2.png)
+![alt text](src/assets/logo-t.png)
 
 # An electronic store that focuses on selling costumes of all kind. 
 Mainly written in HTML, CSS and Javascript. 

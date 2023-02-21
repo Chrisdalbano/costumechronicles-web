@@ -1,5 +1,5 @@
 let images = ["assets/image1.jpg", "assets/image2.jpg", "assets/image3.jpg"];
-let descriptions = ["This is the first description", "This is another one", "And another one..."]
+let descriptions = ["This is the first description", "This is another one description :)", "And another one..."]
 let currentImageIndex = 0;
 
 function prevImage() {

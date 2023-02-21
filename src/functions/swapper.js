@@ -3,29 +3,21 @@ let descriptions = ["This is the first description", "This is another one", "And
 let currentImageIndex = 0;
 
 function prevImage() {
-  document.getElementById("current-image").style.opacity = 0;
-  setTimeout(() => {
-    currentImageIndex--;
-    if (currentImageIndex < 0) {
-      currentImageIndex = images.length - 1;
-    }
-    document.getElementById("current-image").src = images[currentImageIndex];
-    document.getElementById("current-description").textContent = descriptions[currentImageIndex];
-    document.getElementById("current-image").style.opacity = 1;
-  }, 400);
+  currentImageIndex--;
+  if (currentImageIndex < 0) {
+    currentImageIndex = images.length - 1;
+  }
+  document.getElementById("current-image").src = images[currentImageIndex];
+  document.getElementById("current-description").textContent = descriptions[currentImageIndex];
 }
 
 function nextImage() {
-  document.getElementById("current-image").style.opacity = 0;
-  setTimeout(() => {
-    currentImageIndex++;
-    if (currentImageIndex >= images.length) {
-      currentImageIndex = 0;
-    }
-    document.getElementById("current-image").src = images[currentImageIndex];
-    document.getElementById("current-description").textContent = descriptions[currentImageIndex];
-    document.getElementById("current-image").style.opacity = 1;
-  }, 450);
+  currentImageIndex++;
+  if (currentImageIndex >= images.length) {
+    currentImageIndex = 0;
+  }
+  document.getElementById("current-image").src = images[currentImageIndex];
+  document.getElementById("current-description").textContent = descriptions[currentImageIndex];
 }
 
-setInterval(nextImage, 8000);
+setInterval(nextImage, 10000);

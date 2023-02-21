@@ -1,0 +1,63 @@
+.container {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.left-col {
+  display: flex;
+  padding-left: 1rem;
+}
+
+.logo-col {
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.right-col {
+  display: flex;
+  justify-content: end;
+}
+
+.right-col a {
+  color: rgb(189, 0, 0);
+  margin: 10px;
+}
+
+.right-col a:hover {
+  color: rgb(122, 1, 1);
+  cursor: pointer;
+}
+
+.search-bar {
+  width: 50%;
+  border-radius: 15px;
+  border: 1px solid #808080;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.search-icon {
+  width: 6%;
+  height: 6%;
+}
+
+.search-icon:hover {
+  opacity: 75%;
+  width: 7%;
+  height: 7%;
+  cursor: pointer;
+}
+
+.mg {
+  padding-top: 10px;
+  display: inline;
+}
+
+

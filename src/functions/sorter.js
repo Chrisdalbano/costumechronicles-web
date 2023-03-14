@@ -38,11 +38,19 @@ function sortProducts() {
 // Define the search function
 function searchProducts() {
   const searchValue = searchInput.value.trim().toLowerCase();
+  let numResults = 0;
   productArticles.forEach(article => {
     if (article.querySelector('h3').innerText.toLowerCase().includes(searchValue)) {
       article.style.display = 'block';
+      numResults++;
     } else {
       article.style.display = 'none';
     }
   });
+  const noResultsLabel = document.querySelector('#no-results-label');
+  if(numResults == 0){
+    noResultsLabel.style.display = 'block';
+  } else {
+    noResultsLabel.style.display = 'none';
+  }
 }

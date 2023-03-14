@@ -201,8 +201,11 @@ body {
   color: snow;
   text-align: center;
   text-shadow: 2px 2px 3px black;
+  font-weight: 700;
 }
 
-
+.category img:hover {
+  cursor: pointer;
+}
 
 

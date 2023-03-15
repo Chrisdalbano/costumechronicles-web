@@ -1,61 +1,39 @@
 footer {
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.mid-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-container {
-  display: inline-block;
+  display: block;
   text-align: center;
 }
 
-.newsletter,
-.social-media {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 10px;
+.newsletter {
+  display: flex;
+  justify-content: center;
 }
 
-input[type="email"] {
+.newsletter form input[type="email"] {
+  width: 400px;
   border-radius: 15px;
-  border: 1px solid gray;
-  padding: 10px 20px;
-  font-size: 16px;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
 }
 
-button[type="submit"] {
-  width: 50%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #fff;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .social-media a {
-  width: 25%;
-  text-align: center;
-  margin-left: 10px;
+  color: rgb(189, 0, 0);
+  margin: 20px;
 }
 
-.icon-social {
-  align-items: center;
-  width: 4%;
-  height: 4%;
-  margin: 0.2rem;
-}
-
-.topfooter {
-  display: inline-block;
+.social-media a:hover {
+  color: rgb(122, 1, 1);
 }

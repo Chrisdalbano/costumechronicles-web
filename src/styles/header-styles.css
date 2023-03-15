@@ -1,5 +1,5 @@
 .container {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
@@ -7,41 +7,31 @@
 
 .left-col {
   display: flex;
-  width: 25%;
   padding-left: 1rem;
 }
 
 .logo-col {
-  width: 50%;
   text-align: center;
 }
 
 .logo {
-  width: 40%;
+  width: 200px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .right-col {
   display: flex;
-  width: 25%;
   justify-content: end;
-  padding-right: 1rem;
 }
 
-.icon {
-  /* display: flex;
-    justify-content: space-between; */
-  align-items: center;
-  width: 6%;
-  height: 6%;
-  margin: 0.5rem;
+.right-col a {
+  color: rgb(189, 0, 0);
+  margin: 10px;
 }
 
-.icon:hover {
-  opacity: 75%;
-  width: 7%;
-  height: 7%;
+.right-col a:hover {
+  color: rgb(122, 1, 1);
   cursor: pointer;
 }
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="src/assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <link rel="stylesheet" type="text/css" href="styles/main-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/header-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
@@ -75,7 +75,7 @@
 
           <!--logo-->
           <div class="logo-col">
-            <img src="src/assets/logo.png" alt="Logo" class="logo" />
+            <img src="assets/logo.png" alt="Logo" class="logo" />
           </div>
 
           <!--User navigation icons-->
@@ -106,19 +106,19 @@
       <section class="rectangle">
           <div class="category-container">
             <div class="category" id="man">
-              <img src="src/merch/men-costume-c.jpg" alt="Man's Costumes" />
+              <img src="merch/men-costume-c.jpg" alt="Man's Costumes" />
               <p>Man's Costumes</p>
             </div>
             <div class="category" id="women">
-              <img src="src/merch/women-costume-c.jpg" alt="Women's Costumes" />
+              <img src="merch/women-costume-c.jpg" alt="Women's Costumes" />
               <p>Women's Costumes</p>
             </div>
             <div class="category" id="kids">
-              <img src="src/merch/kids-costume-c.jpg" alt="Kid's Costumes" />
+              <img src="merch/kids-costume-c.jpg" alt="Kid's Costumes" />
               <p>Kid's Costumes</p>
             </div>
             <div class="category" id="collectibles">
-              <img src="src/merch/collec-costume-c.jpg" alt="Collectibles" />
+              <img src="merch/collec-costume-c.jpg" alt="Collectibles" />
               <p>Collectibles</p>
             </div>
           </div>
@@ -126,11 +126,15 @@
 
       <!--Swapper-Gallery display-->
       <div class="gallery-wrapper">
-        <button class="left-arrow" onclick="prevImage()">&#10094;</button>
-        <div class="swapper-gallery">
-          <img src="src/merch/image1.jpg" id="current-image" />
+        <div style="align-self: center; justify-self: center;">
+          <button class="left-arrow" onclick="prevImage()">&#10094;</button>
         </div>
-        <button class="right-arrow" onclick="nextImage()">&#10095;</button>
+        <div class="swapper-gallery">
+          <img src="merch/image1.jpg" id="current-image" />
+        </div>
+        <div style="align-self: center; justify-self: center;">
+         <button class="right-arrow" onclick="nextImage()">&#10095;</button> 
+        </div>
       </div>
       <div class="description-wrapper">
         <p class="itemdesc" id="current-description">
@@ -142,32 +146,32 @@
       <!-- Product grid display -->
         <div class="product-grid ">
           <article class="product">
-            <img src="src/merch/woman-costume-1.jpg" alt="Item 1" />
+            <img src="merch/woman-costume-1.jpg" alt="Item 1" />
             <h3>Item 1</h3>
             <p>$10.99</p>
           </article>
           <article class="product">
-            <img src="src/merch/men-costume-2.jpg" alt="Item 2" />
+            <img src="merch/men-costume-2.jpg" alt="Item 2" />
             <h3>Item 2</h3>
             <p>$9.99</p>
           </article>
           <article class="product">
-            <img src="src/merch/collectible-1.jpeg" alt="Item 3" />
+            <img src="merch/collectible-1.jpeg" alt="Item 3" />
             <h3>Item 3</h3>
             <p>$12.99</p>
           </article>
           <article class="product">
-            <img src="src/merch/men-costume-1.jpg" alt="Item 4" />
+            <img src="merch/men-costume-1.jpg" alt="Item 4" />
             <h3>Item 4</h3>
             <p>$14.99</p>
           </article>
           <article class="product">
-            <img src="src/merch/woman-costume-2.jpg" alt="Item 5" />
+            <img src="merch/woman-costume-2.jpg" alt="Item 5" />
             <h3>Item 5</h3>
             <p>$11.99</p>
           </article>
           <article class="product">
-            <img src="src/merch/woman-costume-3.jpg" alt="Item 6" />
+            <img src="merch/woman-costume-3.jpg" alt="Item 6" />
             <h3>Item 6</h3>
             <p>$15.99</p>
           </article>

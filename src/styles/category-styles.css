@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: url("../assets/red-background-2.jpg");
+    background-size: cover;
+  }
+  
+  main {
+    display: block;
+    padding: 7vw 10px 10px 10px; 
+  }
+
+  .address p {
+    color:rgb(255, 255, 255);
+    border-bottom: solid white;
+  }
+
+  .category-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .category-wrapper img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+  }
+
+  .category-wrapper p {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    font-size: 90px;
+    position: absolute;
+    top: 50%;
+  }
+
+  /*merchandise display setup*/
+  .wrapper {
+    display: grid;
+    grid-template-columns: 25% auto;
+  }
+
+  .sorting-tab {
+
+  }
+
+  .merch-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .merch-wrapper section {
+    display: block;
+    padding: 10px;
+  }
+
+  .merchandise {
+    padding: 8px;
+  }
+
+  .merchandise img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .description {
+    color: white;
+    text-align: center;
+  }
+
+  .rating {
+    
+  }

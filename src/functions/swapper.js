@@ -1,4 +1,5 @@
-let images = ["src/merch/image1.jpg", "src/merch/image2.jpg", "src/merch/image3.jpg"];
+let images = ["../merch/image1.jpg","../merch/image2.jpg","../merch/image3.jpg"];
+let descriptions = ["This is the first description", "This is another one description :)", "And another one..."]
 let currentImageIndex = 0;
 
 function prevImage() {
@@ -7,6 +8,7 @@ function prevImage() {
     currentImageIndex = images.length - 1;
   }
   document.getElementById("current-image").src = images[currentImageIndex];
+  document.getElementById("current-description").textContent = descriptions[currentImageIndex];
 }
 
 function nextImage() {
@@ -15,6 +17,7 @@ function nextImage() {
     currentImageIndex = 0;
   }
   document.getElementById("current-image").src = images[currentImageIndex];
+  document.getElementById("current-description").textContent = descriptions[currentImageIndex];
 }
 
 setInterval(nextImage, 10000);

@@ -1,6 +1,9 @@
+.address p {
+  border-bottom: solid rgb(0, 0, 0);
+}
+
 .desc-wrapper{
   padding-bottom: 4rem;
-  
 }
 
 .desc-wrapper a {

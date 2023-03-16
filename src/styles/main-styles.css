@@ -64,8 +64,11 @@ main {
   
 }
 
-.category:hover img {
+.category:hover {
   cursor: pointer;
+}
+
+.category:hover img {
   transform: scale(1.05);
   opacity: 80%;
 }

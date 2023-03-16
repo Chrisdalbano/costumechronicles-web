@@ -20,7 +20,6 @@ function redirectToWebsite(categoryId) {
     }
   }
   
-  // Attach an event listener to each category element
   const categories = document.querySelectorAll(".category");
   categories.forEach(category => {
     category.addEventListener("click", event => {

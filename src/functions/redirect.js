@@ -12,6 +12,9 @@ function redirectToWebsite(categoryId) {
       case "collectibles":
         window.location.href = "./category-collectibles.html";
         break;
+      case "logo":
+        window.location.href = "./index.html";
+        break;
       default:
         break;
     }
@@ -23,4 +26,9 @@ function redirectToWebsite(categoryId) {
     category.addEventListener("click", event => {
       redirectToWebsite(event.currentTarget.id);
     });
+  });
+
+  const logo = document.querySelector("#logo");
+  logo.addEventListener("click", event => {
+    redirectToWebsite(event.currentTarget.id);
   });

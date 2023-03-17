@@ -130,14 +130,12 @@ main {
 }
 
 .buttondesc {
-  border-radius: 4px;
   background-color: #2e2e2e;
-  outline: double white 5px;
   color: #fff;
   text-align: center;
   font-size: 20px;
   padding: 16px;
-  transition: all 0.5s;
+  transition: all 0.2s;
   cursor: pointer;
   margin: auto;
   display: inline-block;
@@ -150,7 +148,7 @@ main {
   opacity: 0;  
   top: 14px;
   right: -20px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .buttondesc:hover{

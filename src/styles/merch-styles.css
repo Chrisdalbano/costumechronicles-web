@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  main {
+    display: block;
+    padding: 7vw 20px 20px 20px; 
+  }
+
+  .address p {
+    color: darkred;
+    border-bottom: 2px solid darkred;
+  }
+
+  .wrapper {
+    display: block;
+  }
+
+  .merchandise {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-bottom: 100px;
+  }
+
+  .merchandise img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    object-position: top;
+    border: solid white;
+    box-shadow: 0px 0px 10px rgb(56, 5, 5);
+  }
+
+  .product-info {
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  .add-merch {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .wrapper h2 {
+    text-align: center;
+    margin: 30px;
+    padding: 10px;
+    border-top: 2px solid darkred;
+    border-bottom: 2px solid darkred;
+  }
+  .merch-gallery {
+    display: flex;
+    overflow: auto;
+    gap: 40px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .merch-gallery div {
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgb(56, 5, 5);
+  }
+
+  .merch-gallery img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+    margin: 20px
+  }

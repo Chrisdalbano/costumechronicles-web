@@ -8,11 +8,12 @@ body {
 
 main {
   display: block;
-  padding: 7vw 10px 10px 10px; 
+  padding: 7vw 20px 20px 20px; 
 }
 
 .address p {
-  border-bottom: solid rgb(0, 0, 0);
+  color: darkred;
+  border-bottom: 2px solid darkred;
 }
 
 .category-wrapper {

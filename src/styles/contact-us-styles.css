@@ -1,0 +1,23 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.contact-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.contact-container {
+    padding-top: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    padding-top: 16rem;
+}

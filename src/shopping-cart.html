@@ -108,17 +108,71 @@
       <div class="wrapper">
         
         <div class="review">
-          <div>
+          <div class="shopping-cart">
             <h1>Shopping cart</h1>
 
-            <!--this part is meant to be build using javaScript -->
-            <div class="merchandise">
-              <img src="merch/men-costume-2.jpg" alt="merch">
-              <p>Product name</p>
+            <!--this is just a placeholder since this part is meant to be rebuild using javaScript -->
+            <div>
+              <div class="merchandise">
+                <img src="merch/men-costume-2.jpg" alt="merch">
+                <div>
+                  <h3>Product name</h3>
+                  <p>Product info</p>
+                </div>
+                <section>
+                  <b>$99.9</b>
+                  <p class="remove">Remove</p>
+                </section>
+              </div>
+              <div class="merchandise">
+                <img src="merch/kids-costume-c.jpg" alt="merch">
+                <div>
+                  <h3>Product name</h3>
+                  <p>Product info</p>
+                </div>
+                <section>
+                  <b>$99.9</b>
+                  <p class="remove">Remove</p>
+                </section>
+              </div>
+              <div class="merchandise">
+                <img src="merch/woman-costume-2.jpg" alt="merch">
+                <div>
+                  <h3>Product name</h3>
+                  <p>Product info</p>
+                </div>
+                <section>
+                  <b>$99.9</b>
+                  <p class="remove">Remove</p>
+                </section>
+              </div>
             </div>
           </div>
           <div>
-            <h1>Order summary</h1>
+
+            <h1>Order Summary</h1>
+
+            <div class="order-summary">
+              <section>
+                <p>Subtotal</p>
+                <p>$99.9</p>
+              </section>
+              <section>
+                <p>Shipping</p>
+                <p>Free</p>
+              </section>
+              <section>
+                <p>Tax</p>
+                <p>Calculated in checkout</p>
+              </section>
+              <section>
+                <p>Estimated Total</p>
+                <b>$100</b>
+              </section>
+              <div class="checkout">
+                <button type="button" class="btn btn-dark" onclick="window.location.href='./checkout-page.html';" style="border-radius: 0; width: 70%;">Go To Checkout</button>
+              </div>
+            </div>
           </div>
         </div>
 

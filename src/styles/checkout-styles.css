@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+main {
+  display: block;
+  padding: 10% 20px 20px 20px; 
+}
+
+.wrapper {
+  display: block;
+}
+
+.wrapper h1 {
+  padding: 10px;
+  border-bottom: 2px solid darkred;
+}
+
+.review {
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 150px;
+  margin-bottom: 100px;
+}
+
+
+.checkout-panel form {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.checkout-panel form div {
+  flex-flow: row;
+}
+
+.checkout-panel input[type="submit"] {
+  color: white;
+  background-color: black;
+}
+
+.merch-container {
+  display: flex;
+  flex-flow: column;
+  overflow: auto;
+  height: 100vh;
+}
+
+.merchandise {
+  display: grid;
+  grid-template-columns: 40% auto auto;
+  grid-gap: 30px;
+  margin: 20px;
+}
+
+.merchandise section {
+  align-self: flex-end; 
+}
+
+.merchandise img {
+  width: 70%;
+  height: 250px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.remove {
+  color: darkred;
+}
+
+.remove:hover {
+  cursor: pointer;
+  color: salmon;
+}
+
+.order-summary section {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.wrapper h2 {
+  text-align: center;
+  margin: 30px;
+  padding: 10px;
+  border-top: 2px solid darkred;
+  border-bottom: 2px solid darkred;
+}
+
+.merch-gallery {
+  display: flex;
+  overflow: auto;
+  gap: 40px;  
+  margin-top: 20px;
+  text-align: center;
+}
+
+.merch-gallery div {
+  margin: 20px;
+  box-shadow: 0px 0px 10px rgb(56, 5, 5);
+}
+
+.merch-gallery img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  margin: 20px
+}

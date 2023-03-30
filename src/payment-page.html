@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
-    <link rel="stylesheet" type="text/css" href="styles/main-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/header-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/checkout-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     
@@ -33,6 +33,9 @@
             <img src="assets/logo.png" alt="Logo" class="logo" />
           </div>
 
+          <script src="functions/redirect.js"></script>
+          <script src="functions/show-navbar.js"></script>
+
           <!--User navigation icons-->
           <div class="right-col">
             <a href="#" class="fs-2">
@@ -40,7 +43,7 @@
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
               </svg>
             </a>
-            <a href="./shopping-cart.html" class="fs-2">
+            <a href="#" class="fs-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg>
@@ -89,7 +92,7 @@
                 <a class="nav-link" href="#">OUR BRAND</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./contact-us.html">CONTACT US</a>
+                <a class="nav-link" href="#">CONTACT US</a>
               </li>
             </li>
           </ul>
@@ -102,91 +105,123 @@
     </header>
 
     <main>
-      <!--Categories display-->
-      <section class="rectangle">
-          <div class="category-container">
-            <div class="category" id="man">
-              <img src="merch/men-costume-c.jpg" alt="Man's Costumes" />
-              <p>Man's Costumes</p>
-            </div>
-            <div class="category" id="women">
-              <img src="merch/women-costume-c.jpg" alt="Women's Costumes" />
-              <p>Women's Costumes</p>
-            </div>
-            <div class="category" id="kids">
-              <img src="merch/kids-costume-c.jpg" alt="Kid's Costumes" />
-              <p>Kid's Costumes</p>
-            </div>
-            <div class="category" id="collectibles">
-              <img src="merch/collec-costume-c.jpg" alt="Collectibles" />
-              <p>Collectibles</p>
+      <div class="wrapper">
+        <div class="review">
+          <div>
+            <b>Shipping To</b>
+            <p>shipping information text</p>
+            <div class="checkout-panel">
+              <form>
+                <h3>Payment</h3>
+                <input type="text" name="cardNum" id="cardNum" placeholder="Card Number*" required>
+                <div>
+                  <input type="tect" name="expDate" id="expDate" placeholder="MM/YY*" required>
+                  <input type="text" name="securityCode" id="securityCode" placeholder="Security Code*" required>
+                </div>
+                <div>
+                  <input type="checkbox" name="billing" id="billing">
+                  <label for="billing">Billing address same as shipping address</label>
+                </div>
+                <input type="submit" value="Review order">
+              </form>
             </div>
           </div>
-      </section>
+          <div>
+            <h1>Order Summary</h1>
 
-      <script src="functions/category-form.js"></script>
-      <script src="functions/redirect.js"></script>
-      <script src="functions/show-navbar.js"></script>
+            <div class="order-summary">
+              <section>
+                <p>Subtotal</p>
+                <p>$99.9</p>
+              </section>
+              <section>
+                <p>Shipping</p>
+                <p>Free</p>
+              </section>
+              <section>
+                <p>Tax</p>
+                <p>Calculated in checkout</p>
+              </section>
+              <section>
+                <p>Estimated Total</p>
+                <b>$100</b>
+              </section>
 
-      <!--Swapper-Gallery display-->
-      <div class="gallery-wrapper">
-        <div style="align-self: center; justify-self: center;">
-          <button class="left-arrow" onclick="prevImage()">&#10094;</button>
+              <div class="merch-container">
+                <div class="merchandise">
+                  <img src="merch/men-costume-2.jpg" alt="merch">
+                  <div>
+                    <h3>Product name</h3>
+                    <p>Product info</p>
+                    <b>$99.9</b>
+                  </div>
+                  <section>
+                    <p class="remove">Remove</p>
+                  </section>
+                </div>
+                <div class="merchandise">
+                  <img src="merch/kids-costume-c.jpg" alt="merch">
+                  <div>
+                    <h3>Product name</h3>
+                    <p>Product info</p>
+                    <b>$99.9</b>
+                  </div>
+                  <section>
+                    <p class="remove">Remove</p>
+                  </section>
+                </div>
+                <div class="merchandise">
+                  <img src="merch/woman-costume-2.jpg" alt="merch">
+                  <div>
+                    <h3>Product name</h3>
+                    <p>Product info</p>
+                    <b>$99.9</b>
+                  </div>
+                  <section>
+                    <p class="remove">Remove</p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="swapper-gallery">
-          <img src="merch/image1.jpg" id="current-image" />
-        </div>
-        <div style="align-self: center; justify-self: center;">
-         <button class="right-arrow" onclick="nextImage()">&#10095;</button> 
-        </div>
+
+        <h2>Before you go</h2>
+
+        <section class="merch-gallery">
+          <div class="product">
+            <img src="merch/men-costume-1.jpg" alt="MERCHANDISE"/>
+            <h3>Produc name</h3>
+            <p>Product description</p>
+          </div>
+          <div class="product">
+            <img src="merch/men-costume-2.jpg" alt="MERCHANDISE"/>
+            <h3>Produc name</h3>
+            <p>Product description</p>
+          </div>
+          <div class="product">
+            <img src="merch/men-costume-3.jpeg" alt="MERCHANDISE"/>
+            <h3>Produc name</h3>
+            <p>Product description</p>
+          </div>
+          <div class="product">
+            <img src="merch/men-costume-c.jpg" alt="MERCHANDISE"/>
+            <h3>Produc name</h3>
+            <p>Product description</p>
+          </div>
+          <div class="product">
+            <img src="merch/men-costume-1.jpg" alt="MERCHANDISE"/>
+            <h3>Produc name</h3>
+            <p>Product description</p>
+          </div>
+          <div class="product">
+            <img src="merch/men-costume-1.jpg" alt="MERCHANDISE"/>
+            <h3>Produc name</h3>
+            <p>Product description</p>
+          </div>
+
+        </section>
       </div>
-      <div class="description-wrapper">
-        <p class="itemdesc" id="current-description">
-          This is the first description
-        </p>
-        <div class="grid-button">
-          <button class="buttondesc" style="outline: none;">Shop this now!</button>
-        </div>
-      </div>
-    
-      <script src="functions/swapper.js"></script>
-
-      <!-- Product grid display -->
-        <div class="product-grid ">
-          <article class="product">
-            <img src="merch/woman-costume-1.jpg" alt="Item 1" id="woman01"/>
-            <h3>Item 1</h3>
-            <p>$10.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/men-costume-2.jpg" alt="Item 2" id="men02"/>
-            <h3>Item 2</h3>
-            <p>$9.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/collectible-1.jpeg" alt="Item 3" id="coll01"/>
-            <h3>Item 3</h3>
-            <p>$12.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/men-costume-1.jpg" alt="Item 4" id="men01"/>
-            <h3>Item 4</h3>
-            <p>$14.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/woman-costume-2.jpg" alt="Item 5" id="woman02"/>
-            <h3>Item 5</h3>
-            <p>$11.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/woman-costume-3.jpg" alt="Item 6" id="woman03"/>
-            <h3>Item 6</h3>
-            <p>$15.99</p>
-          </article>
-        </div>
-        <div class="grid-button">
-          <button class="buttondesc" onclick="window.location.href='./category-new.html';">View more</button>
-        </div>
     </main>
 
     <footer>

@@ -4,7 +4,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url("/src/assets/red-background-2.jpg");
 }
 
 main {
@@ -109,7 +108,7 @@ main {
 .left-arrow,
 .right-arrow {
   font-size: 60px;
-  color: white;
+  color: black;
   cursor: pointer;
   background-color: transparent;
   border: none;

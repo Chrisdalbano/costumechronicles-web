@@ -2,15 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <link rel="stylesheet" type="text/css" href="styles/header-styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/category-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
-    <link rel="stylesheet" type="text/css" href="styles/checkout-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     
-
     <title>Costume Chronicles</title>
   </head>
   <body>
@@ -18,8 +17,8 @@
       <nav class="navbar fixed-top" style="background-color: #ffffff;">
         <div class="container-fluid">
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
-          
-          <!--menu toggler button-->
+
+          <!--menu toggler-->
           <div class="left-col">
             <button class="btn btn-outline-danger" style="font-size: 1.5em" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -58,16 +57,16 @@
         </div>
       </nav>
 
-      <!--offcanvas menu content-->
+      <!--offcanvas content-->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content- end flex-grow-1 pe-3">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./category-new.html">NEW</a>
@@ -77,13 +76,13 @@
                 MERCHANDISE
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="category-men.html">MENS</a></li>
-                <li><a class="dropdown-item" href="category-women.html">WOMENS</a></li>
-                <li><a class="dropdown-item" href="category-kids.html">KIDS</a></li>
+                <li><a class="dropdown-item" href="./category-men.html">MENS</a></li>
+                <li><a class="dropdown-item" href="./category-women.html">WOMENS</a></li>
+                <li><a class="dropdown-item" href="./category-kids.html">KIDS</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="category-collectibles.html">COLLECTIBLES</a></li>
+                <li><a class="dropdown-item" href="./category-collectibles.html">COLLECTIBLES</a></li>
               </ul>
               <li class="nav-item">
                 <a class="nav-link" href="#">ORDERS & RETURNS</a>
@@ -92,7 +91,7 @@
                 <a class="nav-link" href="#">OUR BRAND</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">CONTACT US</a>
+                <a class="nav-link" href="./contact-us.html">CONTACT US</a>
               </li>
             </li>
           </ul>
@@ -104,180 +103,162 @@
       </div>
     </header>
 
-    <main>
-      <div class="wrapper">
-        <div class="review">
-          <div>
-            <h1>Checkout as Guest</h1>
-            <div class="checkout-panel">
-              <form>
-                <b>Shipping To</b>
-                <input type="text" name="firstName" id="firstName" placeholder="First Name*" required>
-                <input type="text" name="lastName" id="lastName" placeholder="Last Name*" required>
-                <input type="text" name="address" id="address" placeholder="Address*" required>
-                <input type="text" name="address2" id="address2" placeholder="Appartment, Suit, Etc (Optional)">
-                <div>
-                  <input type="text" name="city" id="city" placeholder="City*" required>
-                  <select name="state" id="state" required>
-                    <option value="" disabled selected hidden>State*</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                  </select>
-                  <input type="text" name="zipCode" id="zipCode" placeholder="Zip Code*" required>
-                </div>
-                <b>Contact information</b>
-                <input type="tel" name="email" id="email" placeholder="Email*" required>
-                <input type="email" name="phoneNumber" id="phoneNumber" placeholder="Phone Number*" required>
-                <input type="submit" value="Save & Continue">
-              </form>
+   <main>
+      <div class="category-page">
+        <div class="address">
+          <p>Home/New Costumes</p>
+        </div>
+        <div class="category-wrapper">
+          <img src="assets/image1.jpg"/>
+          <p>New Costumes</p>
+        </div>
+
+        <div class="container">
+          <div class="sidebar">
+            <div class="sort-by">
+              <label for="sort">Sort by:</label>
+            <select id="sort">
+              <option value="default">Default</option>
+              <option value="price-high">Price (high to low)</option>
+              <option value="price-low">Price (low to high)</option>
+            </select>
             </div>
+            <div class="sort-by">
+            <input type="text" id="search" placeholder="Search items...">
+            </div>
+            
           </div>
-          <div>
-            <h1>Order Summary</h1>
-
-            <div class="order-summary">
-              <section>
-                <p>Subtotal</p>
-                <p>$99.9</p>
+          <div class="items">
+            <div class="desc-wrapper">
+              <section class="incategory-grid" id="product-grid">
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$1.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$20.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
+                <article class="incategory-product" data-category="men">
+                  <a href="https://example.com/item1">
+                    <img src="assets/items/sample-item1.png" alt="Item 1" />
+                    <h3>Item 1</h3>
+                    
+                    <p>$10.99</p>
+                  </a>
+                    <button class="add-to-cart">Add to Cart</button>
+                  
+                </article>
               </section>
-              <section>
-                <p>Shipping</p>
-                <p>Free</p>
-              </section>
-              <section>
-                <p>Tax</p>
-                <p>Calculated in checkout</p>
-              </section>
-              <section>
-                <p>Estimated Total</p>
-                <b>$100</b>
-              </section>
-
-              <div class="merch-container">
-                <div class="merchandise">
-                  <img src="merch/men-costume-2.jpg" alt="merch">
-                  <div>
-                    <h3>Product name</h3>
-                    <p>Product info</p>
-                    <b>$99.9</b>
-                  </div>
-                  <section>
-                    <p class="remove">Remove</p>
-                  </section>
-                </div>
-                <div class="merchandise">
-                  <img src="merch/kids-costume-c.jpg" alt="merch">
-                  <div>
-                    <h3>Product name</h3>
-                    <p>Product info</p>
-                    <b>$99.9</b>
-                  </div>
-                  <section>
-                    <p class="remove">Remove</p>
-                  </section>
-                </div>
-                <div class="merchandise">
-                  <img src="merch/woman-costume-2.jpg" alt="merch">
-                  <div>
-                    <h3>Product name</h3>
-                    <p>Product info</p>
-                    <b>$99.9</b>
-                  </div>
-                  <section>
-                    <p class="remove">Remove</p>
-                  </section>
-                </div>
-              </div>
+              <div id="no-results-label" style="display: none;">No results matching the search.</div>
             </div>
           </div>
         </div>
-
-        <h2>Before you go</h2>
-
-        <section class="merch-gallery">
-          <div class="product">
-            <img src="merch/men-costume-1.jpg" alt="MERCHANDISE"/>
-            <h3>Produc name</h3>
-            <p>Product description</p>
-          </div>
-          <div class="product">
-            <img src="merch/men-costume-2.jpg" alt="MERCHANDISE"/>
-            <h3>Produc name</h3>
-            <p>Product description</p>
-          </div>
-          <div class="product">
-            <img src="merch/men-costume-3.jpeg" alt="MERCHANDISE"/>
-            <h3>Produc name</h3>
-            <p>Product description</p>
-          </div>
-          <div class="product">
-            <img src="merch/men-costume-c.jpg" alt="MERCHANDISE"/>
-            <h3>Produc name</h3>
-            <p>Product description</p>
-          </div>
-          <div class="product">
-            <img src="merch/men-costume-1.jpg" alt="MERCHANDISE"/>
-            <h3>Produc name</h3>
-            <p>Product description</p>
-          </div>
-          <div class="product">
-            <img src="merch/men-costume-1.jpg" alt="MERCHANDISE"/>
-            <h3>Produc name</h3>
-            <p>Product description</p>
-          </div>
-
-        </section>
       </div>
-    </main>
+      <script src="functions/sorter.js"></script>
+    </main>  
 
     <footer>
       <div class="footer-container">
@@ -308,7 +289,7 @@
             </svg>
           </a>
         </div>
-      </div>  
+      </div> 
     </footer>
-  </body>
+  </body> 
 </html>

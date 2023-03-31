@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
-    <link rel="stylesheet" type="text/css" href="styles/main-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/header-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/contact-us-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     
@@ -27,11 +27,12 @@
               </svg>
             </button>
           </div>
-
+         
           <!--logo-->
           <div class="logo-col" id="logo">
             <img src="assets/logo.png" alt="Logo" class="logo" />
           </div>
+          <script src="functions/redirect.js"></script>
 
           <!--User navigation icons-->
           <div class="right-col">
@@ -99,95 +100,44 @@
           </form>
         </div>
       </div>
+      <script src="functions/show-navbar.js"></script>
     </header>
 
     <main>
-      <!--Categories display-->
-      <section class="rectangle">
-          <div class="category-container">
-            <div class="category" id="man">
-              <img src="merch/men-costume-c.jpg" alt="Man's Costumes" />
-              <p>Man's Costumes</p>
-            </div>
-            <div class="category" id="women">
-              <img src="merch/women-costume-c.jpg" alt="Women's Costumes" />
-              <p>Women's Costumes</p>
-            </div>
-            <div class="category" id="kids">
-              <img src="merch/kids-costume-c.jpg" alt="Kid's Costumes" />
-              <p>Kid's Costumes</p>
-            </div>
-            <div class="category" id="collectibles">
-              <img src="merch/collec-costume-c.jpg" alt="Collectibles" />
-              <p>Collectibles</p>
-            </div>
-          </div>
-      </section>
-
-      <script src="functions/category-form.js"></script>
-      <script src="functions/redirect.js"></script>
-      <script src="functions/show-navbar.js"></script>
-
-      <!--Swapper-Gallery display-->
-      <div class="gallery-wrapper">
-        <div style="align-self: center; justify-self: center;">
-          <button class="left-arrow" onclick="prevImage()">&#10094;</button>
-        </div>
-        <div class="swapper-gallery">
-          <img src="merch/image1.jpg" id="current-image" />
-        </div>
-        <div style="align-self: center; justify-self: center;">
-         <button class="right-arrow" onclick="nextImage()">&#10095;</button> 
-        </div>
+      <div class="wrapper">
+        <section>
+          <h1>Welcome to Costume Chronicles!</h1>
+          <p>Looking for the perfect costume? You've come to the right place. At Costume Chronicles, we have a wide selection of high-quality costumes and accessories for any occasion.</p>
+        </section>
+        <section>
+          <h2>Costumes for Everyone</h2>
+          <p>Our online store features a vast range of costumes, including:</p>
+          <ul>
+            <li>Superhero costumes</li>
+            <li>Movie and TV character costumes</li>
+            <li>Animal costumes</li>
+            <li>Historical costumes</li>
+            <li>And more!</li>
+          </ul>
+          <p>Plus, we offer a variety of accessories to complete your look, such as masks, wigs, hats, and props.</p>
+        </section>
+        <section>
+          <h2>High-Quality Materials</h2>
+          <p>At Costume Chronicles, we pride ourselves on offering only the highest quality costumes and accessories. All of our products are made from durable and comfortable materials, ensuring that you can enjoy your costume for years to come.</p>  
+        </section>
+        <section>
+          <h2>Fast Shipping and Easy Returns</h2>
+          <p>We know that time is of the essence when it comes to costumes, so we offer fast and reliable shipping. We also offer easy returns and exchanges, so if you're not satisfied with your purchase, we're here to help.</p>  
+        </section>
+        <section>
+          <h2>Unleash Your Inner Creativity</h2>
+          <p>At Costume Chronicles, we're passionate about helping people express themselves through their costumes. Whether you're dressing up for a party or simply want to add a little fun to your day-to-day life, we have something for everyone. So why wait? Browse our selection of costumes and accessories today and unleash your inner creativity!</p>  
+        </section>
       </div>
-      <div class="description-wrapper">
-        <p class="itemdesc" id="current-description">
-          This is the first description
-        </p>
-        <div class="grid-button">
-          <button class="buttondesc" style="outline: none;">Shop this now!</button>
-        </div>
-      </div>
-    
-      <script src="functions/swapper.js"></script>
-
-      <!-- Product grid display -->
-        <div class="product-grid ">
-          <article class="product">
-            <img src="merch/woman-costume-1.jpg" alt="Item 1" id="woman01"/>
-            <h3>Item 1</h3>
-            <p>$10.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/men-costume-2.jpg" alt="Item 2" id="men02"/>
-            <h3>Item 2</h3>
-            <p>$9.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/collectible-1.jpeg" alt="Item 3" id="coll01"/>
-            <h3>Item 3</h3>
-            <p>$12.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/men-costume-1.jpg" alt="Item 4" id="men01"/>
-            <h3>Item 4</h3>
-            <p>$14.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/woman-costume-2.jpg" alt="Item 5" id="woman02"/>
-            <h3>Item 5</h3>
-            <p>$11.99</p>
-          </article>
-          <article class="product">
-            <img src="merch/woman-costume-3.jpg" alt="Item 6" id="woman03"/>
-            <h3>Item 6</h3>
-            <p>$15.99</p>
-          </article>
-        </div>
-        <div class="grid-button">
-          <button class="buttondesc" onclick="window.location.href='./category-new.html';">View more</button>
-        </div>
     </main>
+
+    
+
 
     <footer>
       <div class="footer-container">

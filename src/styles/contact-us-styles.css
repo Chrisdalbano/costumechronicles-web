@@ -1,23 +1,41 @@
 * {
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
 }
 
-.contact-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+main {
+    display: block;
+    padding: 10% 20px 20px 20px; 
 }
-.contact-section {
+
+.wrapper {
+    display: block;
     text-align: center;
-    margin-bottom: 2rem;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 40vh;
 }
+
+.wrapper h1 {
+    padding: 10px;
+    border-bottom: 2px solid darkred;
+}
+
+.wrapper > section {
+    margin-bottom: 10vh;
+    text-align: left;
+}
+
 .contact-container {
     padding-top: 4rem;
     max-width: 800px;
     margin: 0 auto;
 }
 
-footer {
-    padding-top: 16rem;
-}
+
+
+
+

@@ -23,7 +23,7 @@
   .merchandise {
     display: flex;
     margin-bottom: 100px;
-    gap: 2em;
+    gap: 5em;
   }
 
   .merchandise img {
@@ -51,8 +51,7 @@
   }
 
   .btn-group, .add-merch {
-
-    width: 70%;
+    width: 500px;
   }
 
   .wrapper h2 {

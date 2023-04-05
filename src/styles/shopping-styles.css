@@ -7,96 +7,110 @@ font-family: Arial, sans-serif;
 }
 
 main {
-    display: block;
-    padding: 10% 20px 20px 20px; 
-  }
+  display: block;
+  padding: 10% 20px 20px 20px; 
+}
 
 .wrapper {
-    display: block;
-  }
+  display: block;
+}
 
 .wrapper h1 {
-    padding: 10px;
-    border-bottom: 2px solid darkred;
+  padding: 20px;
+  color: white;
+  background-color: darkred;
 }
 
 .review {
-    display: grid;
-    grid-template-columns: 50% auto;
-    grid-gap: 150px;
-    margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 60% auto;
+  grid-gap: 50px;
+  margin-bottom: 100px;
 }
 
-.shopping-cart > div {
-    display: flex;
-    flex-flow: column;
-    overflow: auto;
-    height: 100vh;
-    gap: 40px;  
+.merch-container {
+  display: flex;
+  flex-flow: column;
+  overflow: auto;
+  height: 100vh;
+  gap: 40px;  
+  border: 2px solid lightgray;
 }
 
 .merchandise {
-    display: grid;
-    grid-template-columns: 40% 40% auto;
-    grid-gap: 30px;
-    margin: 20px;
+  display: flex;
+  gap: 2em;
+  margin: 20px;
+}
+
+.product-image {
+  width: 15vw;
+  height: 20vw;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0px 0px 8px darkred;
+}
+
+.product-info {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
 }
 
 .merchandise section {
-    align-self: flex-end; 
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between; 
 }
 
-.merchandise img {
-    width: 70%;
-    height: 250px;
-    object-fit: cover;
-    object-position: top;
-  }
-
-.remove {
-    color: darkred;
+.quantity-input {
+  width: 60%;
+  border: none;
+  box-shadow: 2px 2px 8px gray;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 50%;
 }
 
-.remove:hover {
-    cursor: pointer;
-    color: salmon;
+.order-summary {
+  border: 2px solid lightgray;
 }
 
 .order-summary section {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 
 .checkout {
-    margin: 10%;
-  } 
+  margin: 10%;
+} 
 
 .wrapper h2 {
-    text-align: center;
-    margin: 30px;
-    padding: 10px;
-    border-top: 2px solid darkred;
-    border-bottom: 2px solid darkred;
-  }
+  text-align: center;
+  margin: 30px;
+  padding: 10px;
+  border-top: 2px solid darkred;
+  border-bottom: 2px solid darkred;
+}
 
-  .merch-gallery {
-    display: flex;
-    overflow: auto;
-    gap: 40px;  
-    margin-top: 20px;
-    text-align: center;
-  }
+.merch-gallery {
+  display: flex;
+  overflow: auto;
+  gap: 40px;  
+  margin-top: 20px;
+  text-align: center;
+}
 
-  .merch-gallery div {
-    margin: 20px;
-    box-shadow: 0px 0px 10px rgb(56, 5, 5);
-  }
+.merch-gallery div {
+  margin: 20px;
+  box-shadow: 0px 0px 10px rgb(56, 5, 5);
+}
 
-  .merch-gallery img {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    object-position: top;
-    margin: 20px
-  }
+.merch-gallery img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  margin: 20px
+}

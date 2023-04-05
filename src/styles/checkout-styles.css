@@ -16,8 +16,9 @@ main {
 }
 
 .wrapper h1 {
-  padding: 10px;
-  border-bottom: 2px solid darkred;
+  padding: 20px;
+  color: white;
+  background-color: darkred;
 }
 
 .review {
@@ -26,7 +27,6 @@ main {
   grid-gap: 150px;
   margin-bottom: 100px;
 }
-
 
 .checkout-panel form {
   display: flex;
@@ -48,6 +48,7 @@ main {
   flex-flow: column;
   overflow: auto;
   height: 100vh;
+  border: 2px solid darkred;
 }
 
 .merchandise {
@@ -55,6 +56,7 @@ main {
   grid-template-columns: 40% auto auto;
   grid-gap: 30px;
   margin: 20px;
+ 
 }
 
 .merchandise section {

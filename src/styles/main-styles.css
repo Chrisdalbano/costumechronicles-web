@@ -78,13 +78,13 @@ main {
 }
 
 /*Gallery display*/
-.wrapper{
-  display: flex;
-  padding-top: 50px;
-  flex-direction: column;
-
+.gallery-wrapper {
+ margin-top: 60px;
 }
 
+.swapper-gallery img{
+  border: 10px double darkred;
+}
 
 .itemdesc { 
   margin: auto;
@@ -120,7 +120,7 @@ main {
 .product {
   text-align: center;
   background-color: white;
-  outline: double white 5px;
+  box-shadow: 0px 0px 10px darkred;
 }
 
 .product:hover{
@@ -132,6 +132,7 @@ main {
   width: 400px;
   height: 500px;
   object-fit: cover;
+  margin: 10px;
 }
 
 .product h3 {

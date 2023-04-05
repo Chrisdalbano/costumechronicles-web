@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    
+    <script src="./functions/shopping-cart.js" async></script>
 
     <title>Costume Chronicles</title>
   </head>
@@ -106,44 +106,36 @@
 
     <main>
       <div class="wrapper">
-        
         <div class="review">
           <div class="shopping-cart">
-            <h1>Shopping cart</h1>
-
-            <!--this is just a placeholder since this part is meant to be rebuild using javaScript -->
-            <div>
+            <h1>Shopping Cart</h1>
+            <div class="merch-container">
               <div class="merchandise">
-                <img src="merch/men-costume-2.jpg" alt="merch">
-                <div>
-                  <h3>Product name</h3>
-                  <p>Product info</p>
+                <div class="product-image">
+                  <img src="merch/men-costume-2.jpg" alt="merch" class="product-image">
+                </div>
+                <div class="product-info">
+                  <h3 class="prduct-name">Product name</h3>
+                  <p class="product-size">Large</p>
+                  <b class="product-price">$79.99</b>
                 </div>
                 <section>
-                  <b>$99.9</b>
-                  <p class="remove">Remove</p>
+                  <input class="quantity-input" type="number" value="1">
+                  <button class="btn btn-danger">Remove</button>
                 </section>
               </div>
               <div class="merchandise">
-                <img src="merch/kids-costume-c.jpg" alt="merch">
-                <div>
-                  <h3>Product name</h3>
-                  <p>Product info</p>
+                <div class="product-image">
+                  <img src="merch/woman-costume-2.jpg" alt="merch" class="product-image">
+                </div>
+                <div class="product-info">
+                  <h3 class="prduct-name">Product name</h3>
+                  <p class="product-size">Large</p>
+                  <b class="product-price">$79.99</b>
                 </div>
                 <section>
-                  <b>$99.9</b>
-                  <p class="remove">Remove</p>
-                </section>
-              </div>
-              <div class="merchandise">
-                <img src="merch/woman-costume-2.jpg" alt="merch">
-                <div>
-                  <h3>Product name</h3>
-                  <p>Product info</p>
-                </div>
-                <section>
-                  <b>$99.9</b>
-                  <p class="remove">Remove</p>
+                  <input class="quantity-input" type="number" value="1">
+                  <button class="btn btn-danger">Remove</button>
                 </section>
               </div>
             </div>
@@ -155,7 +147,7 @@
             <div class="order-summary">
               <section>
                 <p>Subtotal</p>
-                <p>$99.9</p>
+                <p class="subtotal">$0.00</p>
               </section>
               <section>
                 <p>Shipping</p>
@@ -167,7 +159,7 @@
               </section>
               <section>
                 <p>Estimated Total</p>
-                <b>$100</b>
+                <b>$0.00</b>
               </section>
               <div class="checkout">
                 <button type="button" class="btn btn-dark" onclick="window.location.href='./checkout-page.html';" style="border-radius: 0; width: 70%;">Go To Checkout</button>

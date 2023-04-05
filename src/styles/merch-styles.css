@@ -21,14 +21,14 @@
   }
 
   .merchandise {
-    display: grid;
-    grid-template-columns: 60% 40%;
+    display: flex;
     margin-bottom: 100px;
+    gap: 2em;
   }
 
   .merchandise img {
-    width: 100%;
-    height: 700px;
+    width: 60%;
+    height: 1000px;
     object-fit: cover;
     object-position: top;
     border: solid white;
@@ -36,13 +36,23 @@
   }
 
   .product-info {
-    margin-left: 20px;
-    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 5em;
+    width: 100%;
   }
 
-  .add-merch {
-    display: flex;
+  #product-name {
+    color: darkred;
+  }
+
+  #product-price {
     margin-top: 20px;
+  }
+
+  .btn-group, .add-merch {
+
+    width: 70%;
   }
 
   .wrapper h2 {

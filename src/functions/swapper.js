@@ -1,32 +1,47 @@
-let images = ["assets/image1.jpg", "assets/image2.jpg", "assets/image3.jpg"];
-let descriptions = ["This is the first description", "This is another one description :)", "And another one..."]
-let currentImageIndex = 0;
+
+const products = [{
+  'source':'./merch/image1.jpg',
+  'name':'Product #1',
+  'price':'$69.99'
+  },{
+    'source':'./merch/image2.jpg',
+    'name':'Product #2',
+    'price':'$69.99'
+  },{
+    'source':'./merch/image3.jpg',
+    'name':'Product #3',
+    'price':'$69.99'
+  }]
+
+var currentIndex = 0;
 
 function changeImage() {
-  const currentImage = document.getElementById("current-image");
-  const currentDescription = document.getElementById("current-description");
+  var currentImage = document.getElementById("current-image");
+  var currentName = document.getElementById("current-name");
+  var currentPrice = document.getElementById("current-price");
 
   currentImage.style.opacity = 0;
   setTimeout(() => {
-    currentImage.src = images[currentImageIndex];
-    currentDescription.textContent = descriptions[currentImageIndex];
+    currentImage.src = products[currentIndex].source;
+    currentName.textContent = products[currentIndex].name;
+    currentPrice.textContent = products[currentIndex].price;
     currentImage.style.opacity = 1;
   }, 500);
 }
 
 // Update prevImage() and nextImage() functions to use changeImage() function
 function prevImage() {
-  currentImageIndex--;
-  if (currentImageIndex < 0) {
-    currentImageIndex = images.length - 1;
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = products.length - 1;
   }
   changeImage();
 }
 
 function nextImage() {
-  currentImageIndex++;
-  if (currentImageIndex >= images.length) {
-    currentImageIndex = 0;
+  currentIndex++;
+  if (currentIndex >= products.length) {
+    currentIndex = 0;
   }
   changeImage();
 }

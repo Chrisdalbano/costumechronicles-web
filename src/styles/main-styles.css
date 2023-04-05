@@ -87,13 +87,11 @@ main {
 }
 
 .itemdesc { 
-  margin: auto;
-  width: 1000px;
-  padding-bottom: 20px;
-  text-align: center;
-  font-size: 2rem;
-  color: rgb(0, 0, 0);
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 30px;
 }
+
 
 .buttondesc {
   background-color: #2e2e2e;
@@ -103,11 +101,8 @@ main {
   padding: 16px;
   cursor: pointer;
   margin: auto;
-  display: inline-block;
-  position: relative;
   border-radius: 0.375rem;
 }
-
 
 /*Products display*/
 .product-grid {

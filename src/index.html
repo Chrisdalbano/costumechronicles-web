@@ -94,10 +94,6 @@
               </li>
             </li>
           </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-danger" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </header>
@@ -129,26 +125,29 @@
       <script src="functions/show-navbar.js"></script>
 
       <!--Swapper-Gallery display-->
-      <div class="gallery-wrapper">
-        <div style="align-self: center; justify-self: center;">
-          <button class="left-arrow" onclick="prevImage()">&#10094;</button>
+      <div>
+        <div class="gallery-wrapper">
+          <div style="align-self: center; justify-self: center;">
+            <button class="left-arrow" onclick="prevImage()">&#10094;</button>
+          </div>
+          <div class="swapper-gallery">
+            <img src="merch/image1.jpg" id="current-image" />
+          </div>
+          <div style="align-self: center; justify-self: center;">
+           <button class="right-arrow" onclick="nextImage()">&#10095;</button> 
+          </div>
         </div>
-        <div class="swapper-gallery">
-          <img src="merch/image1.jpg" id="current-image" />
-        </div>
-        <div style="align-self: center; justify-self: center;">
-         <button class="right-arrow" onclick="nextImage()">&#10095;</button> 
+        <div class="description-wrapper">
+          <div class="itemdesc" id="current-description">
+            <h2 id="current-name">Product #1</h2>
+            <b id="current-price">$69.99</b>
+          </div>
+          <div class="grid-button">
+            <button class="buttondesc" id="galleryBtn">Shop this now!</button>
+          </div>
         </div>
       </div>
-      <div class="description-wrapper">
-        <p class="itemdesc" id="current-description">
-          This is the first description
-        </p>
-        <div class="grid-button">
-          <button class="buttondesc">Shop this now!</button>
-        </div>
-      </div>
-    
+      
       <script src="functions/swapper.js"></script>
 
       <!-- Product grid display -->

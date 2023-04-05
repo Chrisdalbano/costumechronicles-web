@@ -5,6 +5,8 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
+  updateCartTotal();
+
   var removeCartItemButtons = document.getElementsByClassName('btn-danger')
   for ( var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i];
@@ -45,5 +47,7 @@ function updateCartTotal() {
     total += price * quantity;
   }
   total = Math.round(total * 100) / 100;
-  document.getElementsByClassName('subtotal')[0].innerText = '$' + total;
+  var cartTotal = document.querySelectorAll('.total');
+  cartTotal[0].innerText = '$' + total;
+  cartTotal[1].innerText = '$' + total;
 }

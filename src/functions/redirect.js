@@ -5,6 +5,11 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
+  const logo = document.querySelector("#logo");
+  logo.addEventListener("click", event => {
+    redirectToWebsite(event.currentTarget.id);
+  });
+
   const categories = document.querySelectorAll(".category");
   categories.forEach(category => {
     category.addEventListener("click", event => {
@@ -12,9 +17,20 @@ function ready() {
     });
   });
 
-  const logo = document.querySelector("#logo");
-  logo.addEventListener("click", event => {
-    redirectToWebsite(event.currentTarget.id);
+  const galleryBtn = document.querySelector('#galleryBtn');
+  galleryBtn.addEventListener('click', event => {
+    var gallery = event.currentTarget.parentElement.parentElement.parentElement;
+  
+    var productImg = gallery.querySelector('#current-image').src;
+    localStorage.setItem('productImg', productImg);
+    
+    var productName = gallery.querySelector('#current-name').innerText;
+    localStorage.setItem('productName', productName);
+
+    var productPrice = gallery.querySelector('#current-price').innerText;
+    localStorage.setItem('productPrice', productPrice);
+
+    window.location.href = "./merch-page.html";
   });
 
   const product = document.querySelectorAll(".product");
@@ -25,7 +41,6 @@ function ready() {
 
       var productName = event.currentTarget.querySelector('.product-name').innerText;
       localStorage.setItem('productName', productName);
-      
 
       var productPrice =  event.currentTarget.querySelector('.product-price').innerText;
       localStorage.setItem('productPrice', productPrice);

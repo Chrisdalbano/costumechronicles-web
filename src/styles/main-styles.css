@@ -156,7 +156,55 @@ main {
   display: block;
 }
 
+.hero-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 100px;
+  left: 70px; 
+  text-align: left;
+  color: #FFF;
+  font-size: 1.7rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.transparent-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #FFF;
+  color: #FFF;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.transparent-button:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .rectangle {

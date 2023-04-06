@@ -216,5 +216,6 @@
         </div>
       </div>  
     </footer>
+    <?php include('connection_test.php'); ?>
   </body>
 </html>

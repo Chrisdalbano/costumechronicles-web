@@ -83,7 +83,9 @@ main {
 }
 
 .checkout {
-  margin: 10%;
+  display: flex;
+  align-items: center;
+  margin: 3em;
 } 
 
 .wrapper h2 {

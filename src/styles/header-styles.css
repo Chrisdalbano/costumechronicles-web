@@ -1,5 +1,5 @@
 .container {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
@@ -70,4 +70,10 @@
 .navbar-hidden {
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    width: 130px;
+  }
 }

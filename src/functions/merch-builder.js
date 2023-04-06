@@ -6,6 +6,12 @@ if (document.readyState == 'loading') {
 
 function ready() {
   build();
+
+  var addToCartButton = document.getElementById('addButton');
+  addToCartButton.addEventListener('click', event => {
+    addToCart(event);
+  });
+
 }
 
 function build() {
@@ -17,4 +23,8 @@ function build() {
 
   var productPrice = localStorage.getItem('productPrice');
   document.getElementById('product-price').innerText = productPrice;
+}
+
+function addToCart(event) {
+
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="styles/login-styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
+    <script src="functions/redirect.js" async></script>
+  </head>
+  <body>
+    <div class="form-container">
+        <div class="logo-col" id="logo">
+            <img src="assets/logo.png" alt="Logo" class="logo" />
+          </div>
+
+      <h2>Log into your account</h2>
+
+      <form id="login-form">
+        <label for="login-username">Username or email</label>
+        <input type="text" id="login-username" required />
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="switch">
+        <p>
+          No account yet? <a href="#" id="signup-link">Join the chronicles!</a>
+        </p>
+        <p>or</p>
+        <p>
+          Forgot username or password?
+          <a href="#" id="signup-link">Click here</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

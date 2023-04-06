@@ -8,7 +8,7 @@ body {
 
 main {
   display: block;
-  padding: 7vw 20px 20px 20px; 
+  padding: 7vw 20px 20px 20px;
 }
 
 .rectangle {
@@ -61,7 +61,6 @@ main {
   color: snow;
   font-weight: 700;
   text-shadow: 2px 2px 3px black;
-  
 }
 
 .category:hover {
@@ -91,7 +90,7 @@ main {
   box-shadow: 0px 0px 10px darkred;
 }
 
-.product:hover{
+.product:hover {
   opacity: 70%;
   cursor: pointer;
 }
@@ -118,6 +117,45 @@ main {
   display: flex;
   justify-content: center;
 }
+
+.right-col {
+  display: flex;
+  align-items: center;
+}
+
+.login-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-item {
+  width: 100%;
+    padding: 10px;
+    background-color: #E42217;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -148,7 +186,7 @@ main {
     font-size: 26px;
     bottom: 6rem;
   }
- 
+
   .product-grid {
     grid-template-columns: auto auto;
   }

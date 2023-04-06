@@ -2,7 +2,7 @@
   $hostName = "ecommerce.mysql.database.azure.com";
   $userName = "admin_costumechronicles";
   $password = "costumechronicles1!";
-  $databaseName = "ecommerce";
+  $databaseName = "ecommerc";
   $conn = mysqli_connect("$hostName", "$userName", "$password", "$databaseName");
 
   // Connection check

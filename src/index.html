@@ -12,6 +12,7 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="functions/main.js" async></script>
     <script src="functions/redirect.js" async></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>Costume Chronicles</title>
   </head>
@@ -166,8 +167,8 @@
         <div class="product-grid ">
           <article class="product">
             <img class="product-image" src="./merch/woman-costume-1.jpg" alt="Item 1" id="woman01"/>
-            <h3 class="product-name">Item 1</h3>
-            <p class="product-price">$10.99</p>
+            <h3 class="product-name" id="productName">Item 1</h3>
+            <p class="product-price" id="productPrice">$10.99</p>
           </article>
           <article class="product">
             <img class="product-image" src="./merch/men-costume-1.jpg" alt="Item 2" id="men02"/>
@@ -199,7 +200,7 @@
           <button class="buttondesc" onclick="window.location.href='./category-new.html';">View more</button>
         </div>
     </main>
-
+    <script src="functions/main-connection.js" defer></script>
     <footer>
       <div class="footer-container">
         <div class="newsletter">
@@ -231,6 +232,5 @@
         </div>
       </div>  
     </footer>
-    <?php include('connection_test.php'); ?>
   </body>
 </html>

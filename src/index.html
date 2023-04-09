@@ -13,6 +13,7 @@
     <script src="functions/main.js" async></script>
     <script src="functions/redirect.js" async></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="functions/connect_db.js" defer></script>
 
     <title>Costume Chronicles</title>
   </head>
@@ -115,8 +116,7 @@
     </header>
 
     <main>
-      <h1>Vanilla JavaScript App</h1>
-      <p>Loading content from the API: <b id="name">...</b></p>
+      <p>Connected to the API? : <b id="name"> X</b></p>
       
     <script>
       (async function() {

@@ -17,43 +17,34 @@ function ready() {
     });
   });
 
-  /*add an event listener for the gallery button*/ 
   const galleryBtn = document.querySelector('#galleryBtn');
   galleryBtn.addEventListener('click', event => {
     var gallery = event.currentTarget.parentElement.parentElement.parentElement;
-
-    var productImg = gallery.querySelector('#current-image').src;   
-    var productName = gallery.querySelector('#current-name').innerText;
-    var productPrice = gallery.querySelector('#current-price').innerText;
+  
+    var productImg = gallery.querySelector('#current-image').src;
+    localStorage.setItem('productImg', productImg);
     
-    var product = {
-      'source': productImg,
-      'name': productName,
-      'size': '',
-      'price': productPrice
-    }
+    var productName = gallery.querySelector('#current-name').innerText;
+    localStorage.setItem('productName', productName);
 
-    localStorage.setItem('productKey', JSON.stringify(product));
+    var productPrice = gallery.querySelector('#current-price').innerText;
+    localStorage.setItem('productPrice', productPrice);
+
     window.location.href = "./merch-page.html";
   });
 
-  /*add an event listener for each product in the grid*/ 
   const product = document.querySelectorAll(".product");
   product.forEach(product => {
     product.addEventListener("click", event => {
-
       var productImg = event.currentTarget.querySelector('.product-image').src;
-      var productName = event.currentTarget.querySelector('.product-name').innerText;
-      var productPrice =  event.currentTarget.querySelector('.product-price').innerText;
-     
-      var product = {
-        'source': productImg,
-        'name': productName,
-        'size': '',
-        'price': productPrice
-      }
+      localStorage.setItem('productImg', productImg);
 
-      localStorage.setItem('productKey', JSON.stringify(product));
+      var productName = event.currentTarget.querySelector('.product-name').innerText;
+      localStorage.setItem('productName', productName);
+
+      var productPrice =  event.currentTarget.querySelector('.product-price').innerText;
+      localStorage.setItem('productPrice', productPrice);
+
       window.location.href = "./merch-page.html";
     });
   });

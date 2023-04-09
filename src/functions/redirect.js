@@ -17,23 +17,8 @@ function ready() {
     });
   });
 
-  const galleryBtn = document.querySelector('#galleryBtn');
-  galleryBtn.addEventListener('click', event => {
-    var gallery = event.currentTarget.parentElement.parentElement.parentElement;
-  
-    var productImg = gallery.querySelector('#current-image').src;
-    localStorage.setItem('productImg', productImg);
-    
-    var productName = gallery.querySelector('#current-name').innerText;
-    localStorage.setItem('productName', productName);
-
-    var productPrice = gallery.querySelector('#current-price').innerText;
-    localStorage.setItem('productPrice', productPrice);
-
-    window.location.href = "./merch-page.html";
-  });
-
-  const product = document.querySelectorAll(".product");
+  /*add eventlistener to all products in index.html*/
+  const product = document.querySelectorAll(".product", ".incategory-product");
   product.forEach(product => {
     product.addEventListener("click", event => {
       var productImg = event.currentTarget.querySelector('.product-image').src;
@@ -47,6 +32,23 @@ function ready() {
 
       window.location.href = "./merch-page.html";
     });
+  });
+
+  /*add eventlistener to all products in categories*/
+  const category_item = document.querySelectorAll(".incategory-product");
+  category_item.forEach(category_item => {
+      category_item.addEventListener("click", event => {
+      var productImg = event.currentTarget.querySelector('img').src;
+      localStorage.setItem('productImg', productImg);
+
+      var productName = event.currentTarget.querySelector('h3').innerText;
+      localStorage.setItem('productName', productName);
+
+      var productPrice =  event.currentTarget.querySelector('p').innerText;
+      localStorage.setItem('productPrice', productPrice);
+
+      window.location.href = "./merch-page.html";
+      });
   });
 }
 

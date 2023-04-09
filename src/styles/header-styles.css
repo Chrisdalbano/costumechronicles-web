@@ -31,22 +31,34 @@
   margin: 10px;
 }
 
-.right-col a:hover, .cart-number:hover {
+.right-col a:hover {
   color: rgb(122, 1, 1);
   cursor: pointer;
 }
 
-.cart-number {
-  position: absolute;
-  visibility: hidden;
-  font-size: 14px;
-  color: white;
-  background-color: rgb(189, 0, 0);
-  border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
-  text-align: center;
-  right: 70px;
+.search-bar {
+  width: 50%;
+  border-radius: 15px;
+  border: 1px solid #808080;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.search-icon {
+  width: 6%;
+  height: 6%;
+}
+
+.search-icon:hover {
+  opacity: 75%;
+  width: 7%;
+  height: 7%;
+  cursor: pointer;
+}
+
+.mg {
+  padding-top: 10px;
+  display: inline;
 }
 
 .navbar-visible {

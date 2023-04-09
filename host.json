@@ -1,0 +1,11 @@
+{
+    "version": "2.0",
+    "extensions": {
+      "http": {
+        "routePrefix": "api",
+        "maxConcurrentRequestsPerCPU": 50,
+        "maxOutstandingRequestsPerCPU": 50,
+        "dynamicThrottlesEnabled": false
+      }
+    }
+  }

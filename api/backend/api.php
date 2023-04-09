@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 // Database connection settings
 $servername = "ecommerce.mysql.database.azure.com";
-$username = "admin_costumechronicles";
+$username = "admin_costumechronicles@ecommerce";
 $password = "costumechronicles1!";
 $dbname = "ecommerce";
 
@@ -20,17 +20,20 @@ if ($conn->connect_error) {
 }
 
 // Fetch the product data
-$sql = "SELECT product_name, price, image_url FROM products WHERE product_id = 1";
+$productName = "snowWhite"; // Set the product name to filter
+$sql = "SELECT product_name, price, image_url FROM products WHERE product_name = '$productName'";
 $result = $conn->query($sql);
 
 if ($result = $conn->query($sql)) {
     if ($result->num_rows > 0) {
         // Output the product data
+        $products = [];
         while ($row = $result->fetch_assoc()) {
-            echo json_encode($row);
+            $products[] = $row;
         }
+        echo json_encode($products);
     } else {
-        echo json_encode(["error" => "No product found"]);
+        echo json_encode(["error" => "No products found"]);
     }
 } else {
     echo json_encode(["error" => "Error executing query: " . $conn->error]);

@@ -146,6 +146,7 @@
         </div>
       </section>
 
+      <script src="functions/category-form.js"></script>
       <script src="functions/show-navbar.js"></script>
 
       <!--Swapper-Gallery display-->
@@ -177,28 +178,7 @@
             <h3 class="product-name" id="productName">Item 1</h3>
             <p class="product-price" id="productPrice">$10.99</p>
           </article>
-          <script>
-            (async function() {
-                
 
-                const response = await fetch('/api/backend/api.php');
-                const data = await response.json();
-                console.log(data); // Check the data in the console
-        
-                // Display the product data on the website
-                const product = data[0]; // Display the first product for now
-                const productName = product.product_name;
-                const productPrice = product.price;
-                const productImageUrl = product.image_url;
-                const productNameElement = document.querySelector('#productName');
-                const productPriceElement = document.querySelector('#productPrice');
-                const productImageElement = document.querySelector('#productImage');
-                productNameElement.textContent = productName;
-                productPriceElement.textContent = `$${productPrice}`;
-                productImageElement.src = productImageUrl;
-                productImageElement.alt = productName;
-            })();
-        </script>
 
           <article class="product">
             <img class="product-image" src="./merch/men-costume-1.jpg" alt="Item 2" id="men02"/>
@@ -211,7 +191,7 @@
             <p class="product-price">$12.99</p>
           </article>
           <article class="product">
-            <img class="product-image" src="./merch/men-costume-3.jpeg" alt="Item 4" id="men01"/>
+            <img class="product-image" src="./merch/men-costume-1.jpg" alt="Item 4" id="men01"/>
             <h3 class="product-name">Item 4</h3>
             <p class="product-price">$14.99</p>
           </article>
@@ -230,7 +210,7 @@
           <button class="buttondesc" onclick="window.location.href='./category-new.html';">View more</button>
         </div>
     </main>
-    <script src="functions/main-connection.js" defer></script>
+    <!-- <script src="functions/main-connection.js" defer></script> -->
     <footer>
       <div class="footer-container">
         <div class="newsletter">

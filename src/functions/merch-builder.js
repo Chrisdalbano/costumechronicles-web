@@ -30,6 +30,7 @@ function ready() {
       'price':productPrice,
       'size':size,
       'image':productImg,
+      'quantity':1,
     }
     
     addToCart(item);

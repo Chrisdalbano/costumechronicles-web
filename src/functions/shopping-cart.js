@@ -25,10 +25,23 @@ function ready() {
 
 function quantityChange(event) {
   var input = event.target;
+  var quantityItem = input.parentElement.parentElement;
+  var merchandise = document.querySelectorAll('.merchandise');
+  var cart = JSON.parse(localStorage.getItem('cart'));
+
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
+  } else {
+    for ( var i = 0; i < merchandise.length; i++) {
+      if(quantityItem == merchandise[i])
+      {
+        cart[i].quantity = input.value;
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+    }
   }
   updateCartTotal();
+  updateCartCount();
 }
 
 function removeCartItem(event) {
@@ -73,8 +86,14 @@ function updateCartTotal() {
 function updateCartCount() {
   var cart = JSON.parse(localStorage.getItem('cart'));
   var count = document.getElementById('item_count');
+  var quantity = 0
+  
   if(cart.length > 0) {
-    count.innerText = cart.length;
+    for (var i = 0; i < cart.length; i++) {
+      quantity = quantity + parseInt(cart[i].quantity )
+    }
+    console.log(quantity);
+    count.innerText = quantity;
     count.style.visibility = 'visible';
   }
 }

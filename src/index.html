@@ -180,6 +180,21 @@
             <h3 class="product-name" id="productName">Item 1</h3>
             <p class="product-price" id="productPrice">$10.99</p>
           </article>
+          <script>
+            async function fetchProductData() {
+              try {
+                const response = await fetch('/api/message');
+                const data = await response.json();
+          
+                document.getElementById('productName').textContent = data.name;
+                document.getElementById('productPrice').textContent = `$${data.price.toFixed(2)}`;
+              } catch (error) {
+                console.error('Error fetching product data:', error);
+              }
+            }
+          
+            fetchProductData();
+          </script>
           <article class="product">
             <img class="product-image" src="./merch/men-costume-1.jpg" alt="Item 2" id="men02"/>
             <h3 class="product-name">Item 2</h3>

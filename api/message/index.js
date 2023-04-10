@@ -4,33 +4,34 @@
 //     });
 // };
 
-const sql = require('mssql');
+const mysql = require('mysql2/promise');
 
 module.exports = async function (context, req) {
     const config = {
+        host: 'ecommerce.mysql.database.azure.com',
         user: 'admin_costumechronicles',
         password: 'costumechronicles1!',
-        server: 'ecommerce.mysql.database.azure.com',
         database: 'ecommerce',
-        options: {
-            encrypt: true,
-            trustServerCertificate: false,
-        },
     };
 
+    let connection;
+
     try {
-        await sql.connect(config);
-        const result = await sql.query`SELECT name, price FROM products WHERE id = 1`;
+        connection = await mysql.createConnection(config);
+        const [rows] = await connection.execute('SELECT `product_name`, `price` FROM `ecommerce products` WHERE `product_id` = ?', [1]);
         context.res = {
             status: 200,
-            body: result.recordset[0],
+            body: rows[0],
         };
     } catch (err) {
         context.res = {
             status: 500,
-            body: "Error fetching data from the database",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ error: "Error fetching data from the database" }),
         };
     } finally {
-        sql.close();
+        if (connection) {
+            await connection.end();
+        }
     }
 };

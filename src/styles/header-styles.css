@@ -41,10 +41,10 @@
   background-color: darkred;
   font-size: 14px;
   text-align: center;
-  right: 8vw;
+  right: 72px;
   width: 22px;
   height: 22px;
-  position: absolute;
+  position: absolute;;
   border-radius: 50%;
   visibility: hidden;
 }

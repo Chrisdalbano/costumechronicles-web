@@ -17,7 +17,6 @@ if (document.readyState == 'loading') {
       for (var i = 0; i < cart.length; i++) {
         quantity = quantity + parseInt(cart[i].quantity )
       }
-      console.log(quantity);
       count.innerText = quantity;
       count.style.visibility = 'visible';
     }

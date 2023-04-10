@@ -14,6 +14,8 @@ function ready() {
   var productPrice = localStorage.getItem('productPrice');
   document.getElementById('product-price').innerText = productPrice;
 
+  var price = parseFloat(productPrice.replace('$', ''));
+
   const addToCartButton = document.querySelector('#addButton');
   addToCartButton.addEventListener('click', event => {
     const sizeRadio = document.querySelectorAll('.btn-check');
@@ -27,7 +29,7 @@ function ready() {
     var item = {
       'product_id':'',
       'product_name':productName,
-      'price':productPrice,
+      'price':price,
       'size':size,
       'image':productImg,
       'quantity':1,
@@ -40,9 +42,8 @@ function ready() {
 }
 
 function addToCart(currentProduct) {
-  var cart =[]
   if(localStorage.getItem('cart')) {
-    cart = JSON.parse(localStorage.getItem('cart'));
+    var cart = JSON.parse(localStorage.getItem('cart'));
   }
   cart.push(currentProduct);
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -59,7 +60,6 @@ function updateCartCount() {
     for (var i = 0; i < cart.length; i++) {
       quantity = quantity + parseInt(cart[i].quantity )
     }
-    console.log(quantity);
     count.innerText = quantity;
     count.style.visibility = 'visible';
   }

@@ -6,6 +6,10 @@ if (document.readyState == 'loading') {
 
 function ready() {
 
+  if(!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+  
   const galleryBtn = document.querySelector('#galleryBtn');
   galleryBtn.addEventListener('click', event => {
   var gallery = event.currentTarget.parentElement.parentElement.parentElement;

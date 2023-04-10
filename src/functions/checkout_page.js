@@ -9,58 +9,6 @@ function ready() {
   displayCart(cart);
   updateCartTotal();
   updateCartCount();
-
-  var removeCartItemButtons = document.querySelectorAll('.btn-danger')
-  for ( var i = 0; i < removeCartItemButtons.length; i++) {
-    var button = removeCartItemButtons[i];
-    button.addEventListener('click', removeCartItem);
-  }
-
-  var quantityInputs = document.querySelectorAll('.quantity-input')
-  for ( var i = 0; i < quantityInputs.length; i++) {
-    var input = quantityInputs[i];
-    input.addEventListener('change', quantityChange);
-  }
-}
-
-function quantityChange(event) {
-  var input = event.target;
-  var quantityItem = input.parentElement.parentElement;
-  var merchandise = document.querySelectorAll('.merchandise');
-  var cart = JSON.parse(localStorage.getItem('cart'));
-
-  if (isNaN(input.value) || input.value <= 0) {
-    input.value = 1;
-  } else {
-    for ( var i = 0; i < merchandise.length; i++) {
-      if(quantityItem == merchandise[i])
-      {
-        cart[i].quantity = input.value;
-        localStorage.setItem('cart', JSON.stringify(cart));
-      }
-    }
-  }
-  updateCartTotal();
-  updateCartCount();
-}
-
-function removeCartItem(event) {
-  var buttonClicked = event.target;
-  var buttonItem = buttonClicked.parentElement.parentElement;
-  var merchandise = document.querySelectorAll('.merchandise');
-  var cart = JSON.parse(localStorage.getItem('cart'));
-  
-  for ( var i = 0; i < merchandise.length; i++) {
-    if(buttonItem == merchandise[i])
-    {
-      cart.splice(i, 1);
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
-  }
-
-  buttonItem.remove();
-  updateCartTotal();
-  updateCartCount();
 }
 
 function updateCartTotal() {
@@ -120,11 +68,7 @@ function displayCart(cart) {
       {className:'product-size', innerText:item.size}))
     productInfo.appendChild(Object.assign(document.createElement('p'), 
       {className:'product-price', innerText:item.price}))
-
-  var section = merchandise.getElementsByTagName('section')[0];
-  section.appendChild(Object.assign(document.createElement('input'), 
-      {className:'quantity-input', type:'number', value:item.quantity}))
-  section.appendChild(Object.assign(document.createElement('button'), 
-      {className:'btn btn-danger', innerText:'Remove'}))
+    productInfo.appendChild(Object.assign(document.createElement('b'), 
+      {className:'product-quantity', innerText:item.quantity}))
   }
 }

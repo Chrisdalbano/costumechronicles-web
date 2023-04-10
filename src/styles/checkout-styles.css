@@ -43,46 +43,52 @@ main {
   background-color: black;
 }
 
-.merch-container {
-  display: flex;
-  flex-flow: column;
-  overflow: auto;
-  height: 100vh;
-  border: 2px solid darkred;
-}
 
-.merchandise {
-  display: grid;
-  grid-template-columns: 40% auto auto;
-  grid-gap: 30px;
-  margin: 20px;
- 
-}
-
-.merchandise section {
-  align-self: flex-end; 
-}
-
-.merchandise img {
-  width: 70%;
-  height: 250px;
-  object-fit: cover;
-  object-position: top;
-}
-
-.remove {
-  color: darkred;
-}
-
-.remove:hover {
-  cursor: pointer;
-  color: salmon;
-}
-
+/*order summary display*/
 .order-summary section {
   display: flex;
   justify-content: space-between;
   margin: 20px;
+}
+
+.merch-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100vh;
+  gap: 40px;  
+  border: 2px solid lightgray;
+}
+
+.merchandise {
+  display: flex;
+  gap: 1em;
+  margin: 20px;
+}
+
+.product-image {
+  width: 15vw;
+  height: 20vw;
+  object-fit: cover;
+  object-position: top;
+}
+
+.product-info {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.product-price {
+  color: darkred;
+}
+
+.product-quantity {
+  margin-top: 4rem;
+  border: 1px solid lightgray;;
+  width: 30px;
+  text-align: center;
+  color: darkgrey;
 }
 
 .wrapper h2 {

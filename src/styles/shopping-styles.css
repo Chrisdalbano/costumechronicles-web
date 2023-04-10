@@ -30,7 +30,7 @@ main {
 
 .merch-container {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   overflow: auto;
   height: 100vh;
   gap: 40px;  

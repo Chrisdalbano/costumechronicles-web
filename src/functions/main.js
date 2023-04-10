@@ -5,20 +5,23 @@ if (document.readyState == 'loading') {
   }
 
 function ready() {
-    const galleryBtn = document.querySelector('#galleryBtn');
-    galleryBtn.addEventListener('click', event => {
-    var gallery = event.currentTarget.parentElement.parentElement.parentElement;
+  /*if(!localStorage.getItem('cart')) {
+    localStorage.setItem("cart", []);
+  }*/
 
-    var productImg = gallery.querySelector('#current-image').src;
-    localStorage.setItem('productImg', productImg);
+  const galleryBtn = document.querySelector('#galleryBtn');
+  galleryBtn.addEventListener('click', event => {
+  var gallery = event.currentTarget.parentElement.parentElement.parentElement;
 
-    var productName = gallery.querySelector('#current-name').innerText;
-    localStorage.setItem('productName', productName);
+  var productImg = gallery.querySelector('#current-image').src;
+  localStorage.setItem('productImg', productImg);
 
-    var productPrice = gallery.querySelector('#current-price').innerText;
-    localStorage.setItem('productPrice', productPrice);
+  var productName = gallery.querySelector('#current-name').innerText;
+  localStorage.setItem('productName', productName);
 
-    window.location.href = "./merch-page.html";
-    });
+  var productPrice = gallery.querySelector('#current-price').innerText;
+  localStorage.setItem('productPrice', productPrice);
 
+  window.location.href = "./merch-page.html";
+  });
 }

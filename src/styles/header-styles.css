@@ -36,29 +36,22 @@
   cursor: pointer;
 }
 
-.search-bar {
-  width: 50%;
-  border-radius: 15px;
-  border: 1px solid #808080;
-  padding: 10px 20px;
-  font-size: 16px;
+.item_count {
+  color: white;
+  background-color: darkred;
+  font-size: 14px;
+  text-align: center;
+  right: 8vw;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  border-radius: 50%;
+  visibility: hidden;
 }
 
-.search-icon {
-  width: 6%;
-  height: 6%;
-}
-
-.search-icon:hover {
-  opacity: 75%;
-  width: 7%;
-  height: 7%;
+.item_count:hover {
+  color: black;
   cursor: pointer;
-}
-
-.mg {
-  padding-top: 10px;
-  display: inline;
 }
 
 .navbar-visible {

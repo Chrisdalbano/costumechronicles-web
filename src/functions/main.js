@@ -5,9 +5,7 @@ if (document.readyState == 'loading') {
   }
 
 function ready() {
-  
-  updateCartCount();
-  
+
   const galleryBtn = document.querySelector('#galleryBtn');
   galleryBtn.addEventListener('click', event => {
   var gallery = event.currentTarget.parentElement.parentElement.parentElement;
@@ -23,13 +21,4 @@ function ready() {
 
   window.location.href = "./merch-page.html";
   });
-}
-
-function updateCartCount() {
-  var cart = JSON.parse(localStorage.getItem('cart'));
-  var count = document.getElementById('item_count');
-  if(cart.length > 0) {
-    count.innerText = cart.length;
-    count.style.visibility = 'visible';
-  }
 }

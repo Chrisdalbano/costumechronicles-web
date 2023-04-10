@@ -123,7 +123,7 @@ function displayCart(cart) {
 
   var section = merchandise.getElementsByTagName('section')[0];
   section.appendChild(Object.assign(document.createElement('input'), 
-      {className:'quantity-input', type:'number', value:1}))
+      {className:'quantity-input', type:'number', value:item.quantity}))
   section.appendChild(Object.assign(document.createElement('button'), 
       {className:'btn btn-danger', innerText:'Remove'}))
   }

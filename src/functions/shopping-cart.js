@@ -6,17 +6,17 @@ if (document.readyState == 'loading') {
 
 function ready() {
   var cart = JSON.parse(localStorage.getItem('cart')); 
-  addItemToCart(cart);
+  displayCart(cart);
   updateCartTotal();
   updateCartCount();
 
-  var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+  var removeCartItemButtons = document.querySelectorAll('.btn-danger')
   for ( var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i];
     button.addEventListener('click', removeCartItem);
   }
 
-  var quantityInputs = document.getElementsByClassName('quantity-input')
+  var quantityInputs = document.querySelectorAll('.quantity-input')
   for ( var i = 0; i < quantityInputs.length; i++) {
     var input = quantityInputs[i];
     input.addEventListener('change', quantityChange);
@@ -33,8 +33,21 @@ function quantityChange(event) {
 
 function removeCartItem(event) {
   var buttonClicked = event.target;
-  buttonClicked.parentElement.parentElement.remove();
+  var buttonItem = buttonClicked.parentElement.parentElement;
+  var merchandise = document.querySelectorAll('.merchandise');
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  
+  for ( var i = 0; i < merchandise.length; i++) {
+    if(buttonItem == merchandise[i])
+    {
+      cart.splice(i, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }
+
+  buttonItem.remove();
   updateCartTotal();
+  updateCartCount();
 }
 
 function updateCartTotal() {
@@ -66,7 +79,7 @@ function updateCartCount() {
   }
 }
 
-function addItemToCart(cart) {
+function displayCart(cart) {
   for ( var i = 0 ; i < cart.length; i++ ) {
     var item = cart[i];
 
@@ -76,7 +89,7 @@ function addItemToCart(cart) {
 
     var merchandise = document.getElementsByClassName('merchandise')[i];
     merchandise.appendChild(Object.assign(document.createElement('img'), 
-      {className:'product-image', src:'merch/men-costume-2.jpg'}))
+      {className:'product-image', src:item.image}))
     merchandise.appendChild(Object.assign(document.createElement('div'), 
       {className:'product-info'}))
     merchandise.appendChild(Object.assign(document.createElement('section')))

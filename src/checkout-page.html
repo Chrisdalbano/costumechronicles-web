@@ -108,7 +108,7 @@
           <div>
             <h1>Checkout as Guest</h1>
             <div class="checkout-panel">
-              <form>
+              <form id="shipping-form">
                 <b>Shipping To</b>
                 <input type="text" name="firstName" id="firstName" placeholder="First Name*" required>
                 <input type="text" name="lastName" id="lastName" placeholder="Last Name*" required>
@@ -174,8 +174,8 @@
                 </div>
                 <b>Contact information</b>
                 <input type="email" name="email" id="email" placeholder="Email*" required>
-                <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number*" required>
-                <input type="submit" value="Save & Continue" onclick="window.location.href='./payment-page.html';">
+                <input type="tel" name="phoneNumber" id="phone" placeholder="Phone Number*" required>
+                <input type="submit" value="Save & Continue">
               </form>
             </div>
           </div>
@@ -196,7 +196,7 @@
                 <p class="tax">6%</p>
               </section>
               <section>
-                <p>Estimated Total</p>
+                <p>Total</p>
                 <p class="total">$0.00</p>
               </section>
               <div class="merch-container"></div>

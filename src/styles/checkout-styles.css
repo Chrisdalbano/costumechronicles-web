@@ -30,12 +30,14 @@ main {
 
 .checkout-panel form {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   gap: 20px;
 }
 
-.checkout-panel form div {
-  flex-flow: row;
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .checkout-panel input[type="submit"] {
@@ -43,6 +45,11 @@ main {
   background-color: black;
 }
 
+#billing_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 /*order summary display*/
 .order-summary section {

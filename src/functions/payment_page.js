@@ -7,6 +7,12 @@ if (document.readyState == 'loading') {
 function ready() {
   displayCart();
   updateCartTotal();
+
+  var infoObj = JSON.parse(localStorage.getItem('shippingInfo'));
+  var info = infoObj.address + ' ' + infoObj.address2 + ', ' + infoObj.city + ' ' + infoObj.state + ' - ' + infoObj.zip;
+
+  var shippingInfo = document.getElementById('shippingInfo'); 
+  shippingInfo.innerText = info;
 }
 
 function updateCartTotal() {

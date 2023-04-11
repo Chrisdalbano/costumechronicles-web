@@ -8,6 +8,34 @@ function ready() {
   displayCart();
   updateCartTotal();
   updateCartCount();
+
+  var shippingForm = document.getElementById('shipping-form');
+  shippingForm.addEventListener('submit', event => {
+    event.preventDefault();
+
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var address = document.getElementById('address').value;
+    var address2 = document.getElementById('address2').value;
+    var city = document.getElementById('city').value;
+    var state = document.getElementById('state').value;
+    var zip = document.getElementById('zipCode').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+
+    var info = {
+      "firstName": firstName,
+      "lastName": lastName,
+      "address": address,
+      "address2": address2,
+      "city": city,
+      "state": state,
+      "zip": zip,
+    }
+
+    localStorage.setItem('shippingInfo', JSON.stringify(info));
+    window.location.href = "./payment-page.html";
+  });
 }
 
 function updateCartTotal() {

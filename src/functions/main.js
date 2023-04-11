@@ -1,3 +1,5 @@
+import database from './temp_database.json' assert { type: 'json' };
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
   } else {
@@ -10,6 +12,11 @@ function ready() {
     localStorage.setItem('cart', JSON.stringify([]));
   }
   
+  /*reads temp_database.json and stores it in the local storage*/
+  var products = database.products;
+  localStorage.setItem('products', JSON.stringify(products));
+
+  /*add event listener to the button of the slide gallery*/
   const galleryBtn = document.querySelector('#galleryBtn');
   galleryBtn.addEventListener('click', event => {
   var gallery = event.currentTarget.parentElement.parentElement.parentElement;

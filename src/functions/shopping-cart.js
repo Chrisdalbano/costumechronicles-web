@@ -5,8 +5,7 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-  var cart = JSON.parse(localStorage.getItem('cart')); 
-  displayCart(cart);
+  displayCart();
   updateCartTotal();
   updateCartCount();
 
@@ -98,7 +97,8 @@ function updateCartCount() {
   }
 }
 
-function displayCart(cart) {
+function displayCart() {
+  var cart = JSON.parse(localStorage.getItem('cart')); 
   for ( var i = 0 ; i < cart.length; i++ ) {
     var item = cart[i];
 

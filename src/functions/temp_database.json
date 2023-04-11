@@ -1,0 +1,59 @@
+{ "products": [
+    {
+        "product_id": 0,
+        "product_name": "Snow White Costume",
+        "price": 69.99,
+        "stock": 100,
+        "image":"./merch/woman-costume-1.jpg",
+        "category": "women"
+    },{
+        "product_id": 1,
+        "product_name": "Spiderman Costume",
+        "price": 89.99,
+        "stock": 100,
+        "image":"./merch/men-costume-1.jpg",
+        "category": "men"
+    },{
+        "product_id": 2,
+        "product_name": "Nier Automata Costume",
+        "price": 129.99,
+        "stock": 100,
+        "image":"./merch/woman-costume-2.jpg",
+        "category": "women"
+    },{
+        "product_id": 3,
+        "product_name": "Robin Costume",
+        "price": 149.99,
+        "stock": 100,
+        "image":"./merch/men-costume-2.jpg",
+        "category": "men"
+    },{
+        "product_id": 4,
+        "product_name": "Genshi Impact (Sara) Costume",
+        "price": 129.99,
+        "stock": 100,
+        "image":"./merch/woman-costume-3.jpg",
+        "category": "women"
+    },{
+        "product_id": 5,
+        "product_name": "Assassin's Creed (Edward) Costume",
+        "price": 169.99,
+        "stock": 100,
+        "image":"./merch/men-costume-3.jpeg",
+        "category": "men"
+    },{
+        "product_id": 6,
+        "product_name": "Charizard Costume",
+        "price": 69.99,
+        "stock": 100,
+        "image":"./merch/kids-costume-1.jpg",
+        "category": "kids"
+    },{
+        "product_id": 7,
+        "product_name": "One piece Hat",
+        "price": 39.99,
+        "stock": 100,
+        "image":"./merch/collectible-1.jpeg",
+        "category": "collectibles"
+    }]
+}

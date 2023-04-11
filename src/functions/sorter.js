@@ -1,14 +1,22 @@
-// Get the product grid and product articles
-const productGrid = document.querySelector('.incategory-grid');
-const productArticles = productGrid.querySelectorAll('.incategory-product');
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready);
+} else {
+  ready();
+}
 
-// Get the filter, sort and search inputs
-const sortInput = document.querySelector('#sort');
-const searchInput = document.querySelector('#search');
+function ready() {
+  // Get the product grid and product articles
+  const productGrid = document.querySelector('.incategory-grid');
+  const productArticles = productGrid.querySelectorAll('.incategory-product');
 
-// Add event listeners to the inputs
-sortInput.addEventListener('change', sortProducts);
-searchInput.addEventListener('keyup', searchProducts);
+  // Get the filter, sort and search inputs
+  const sortInput = document.querySelector('#sort');
+  const searchInput = document.querySelector('#search');
+
+  // Add event listeners to the inputs
+  sortInput.addEventListener('change', sortProducts);
+  searchInput.addEventListener('keyup', searchProducts);
+}
 
 // Define the filter function
 function filterProducts() {

@@ -33,23 +33,6 @@ function ready() {
       window.location.href = "./merch-page.html";
     });
   });
-
-  /*add eventlistener to all products in categories*/
-  const category_item = document.querySelectorAll(".incategory-product");
-  category_item.forEach(category_item => {
-      category_item.addEventListener("click", event => {
-      var productImg = event.currentTarget.querySelector('img').src;
-      localStorage.setItem('productImg', productImg);
-
-      var productName = event.currentTarget.querySelector('h3').innerText;
-      localStorage.setItem('productName', productName);
-
-      var productPrice =  event.currentTarget.querySelector('p').innerText;
-      localStorage.setItem('productPrice', productPrice);
-
-      window.location.href = "./merch-page.html";
-      });
-  });
 }
 
 function redirectToWebsite(categoryId) {

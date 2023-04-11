@@ -5,6 +5,7 @@
 // };
 
 const mysql = require('mysql2/promise');
+const fs = require('fs');
 
 module.exports = async function (context, req) {
     const config = {
@@ -12,19 +13,24 @@ module.exports = async function (context, req) {
         user: 'admin_costumechronicles',
         password: 'costumechronicles1!',
         database: 'ecommerce',
+        ssl: {
+            ca: fs.readFileSync('message/DigiCertGlobalRootCA.crt.pem')
+        }
     };
 
     let connection;
 
     try {
+        console.log('Trying connection...');
         connection = await mysql.createConnection(config);
-        const [rows] = await connection.execute('SELECT `product_name`, `price` FROM `ecommerce products` WHERE `product_id` = ?', [1]);
+        console.log('Succesfully connected.');
+        const [rows] = await connection.execute('SELECT `product_name`, `price` FROM products WHERE `product_id` = ?', [1]);
         context.res = {
             status: 200,
             body: rows[0],
         };
     } catch (err) {
-        context.log.error('Error:', err); // Log the error details
+        context.log('Error:', err); // Change this line
         context.res = {
             status: 500,
             headers: { "Content-Type": "application/json" },

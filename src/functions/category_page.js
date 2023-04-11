@@ -21,12 +21,14 @@ function ready() {
     }
 
     var url = window.location.pathname;
+    var folder = url.substring(url.indexOf('/'), url.lastIndexOf('/'));
+    
     switch(url){
-        case "/src/category-women.html": displayProducts(women); break;
-        case "/src/category-men.html": displayProducts(men); break;
-        case "/src/category-kids.html": displayProducts(kids); break;
-        case "/src/category-collectibles.html": displayProducts(collectibles); break;
-        case "/src/category-new.html": displayProducts(products); break;
+        case folder + "/category-women.html": displayProducts(women); break;
+        case folder + "/category-men.html": displayProducts(men); break;
+        case folder + "/category-kids.html": displayProducts(kids); break;
+        case folder + "/category-collectibles.html": displayProducts(collectibles); break;
+        case folder + "/category-new.html": displayProducts(products); break;
     }
 
     const logo = document.querySelector("#logo");

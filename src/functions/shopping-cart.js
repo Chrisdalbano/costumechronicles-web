@@ -12,13 +12,21 @@ function ready() {
   var removeCartItemButtons = document.querySelectorAll('.btn-danger')
   for ( var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i];
-    button.addEventListener('click', removeCartItem);
+    button.addEventListener('click', event => {
+      removeCartItem(event);
+      updateCartCount();
+      updateCartTotal();
+    });
   }
 
   var quantityInputs = document.querySelectorAll('.quantity-input')
   for ( var i = 0; i < quantityInputs.length; i++) {
     var input = quantityInputs[i];
-    input.addEventListener('change', quantityChange);
+    input.addEventListener('change', event => {
+      quantityChange(event);
+      updateCartCount();
+      updateCartTotal();
+    });
   }
 }
 
@@ -39,8 +47,7 @@ function quantityChange(event) {
       }
     }
   }
-  updateCartTotal();
-  updateCartCount();
+  
 }
 
 function removeCartItem(event) {
@@ -56,10 +63,7 @@ function removeCartItem(event) {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
   }
-
   buttonItem.remove();
-  updateCartTotal();
-  updateCartCount();
 }
 
 function updateCartTotal() {
@@ -91,9 +95,11 @@ function updateCartCount() {
     for (var i = 0; i < cart.length; i++) {
       quantity +=  parseInt(cart[i].quantity )
     }
-    console.log(quantity);
     count.innerText = quantity;
     count.style.visibility = 'visible';
+  } else {
+    count.innerText = 0;
+    count.style.visibility = 'hidden';
   }
 }
 

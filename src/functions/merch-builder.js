@@ -5,8 +5,8 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-  var products = JSON.parse(localStorage.getItem('products')); 
-  var current_product = JSON.parse(localStorage.getItem('current_product'));
+  const products = JSON.parse(localStorage.getItem('products')); 
+  const current_product = JSON.parse(localStorage.getItem('current_product'));
   
   /*Set the atributes of the current product*/
   document.getElementById('currentMerch').src = current_product.image;
@@ -47,26 +47,35 @@ function ready() {
         break;
       }
     }
-    var item = {
-      'product_id':'',
-      'product_name':productName,
-      'price':price,
-      'size':size,
-      'image':productImg,
-      'quantity':1,
-    }
-    addToCart(item);
+    current_product["size"] = size;
+    current_product["quantity"] = 1;
+    addToCart(current_product);
   });
   updateCartCount();
 }
 
-function addToCart(currentProduct) {
-  if(localStorage.getItem('cart')) {
-    var cart = JSON.parse(localStorage.getItem('cart'));
-  }
-  cart.push(currentProduct);
-  localStorage.setItem('cart', JSON.stringify(cart));
+function addToCart(current_product) {
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  var match = false;
 
+  if (cart.length > 0) {
+    for (var i = 0; i < cart.length; i++) {
+      if(cart[i].product_id == current_product.product_id && cart[i].size == current_product.size) {
+        match = true;
+        cart[i].quantity += 1;
+        break;
+      }
+    }
+
+    if (!match) {
+      cart.push(current_product);
+    };
+
+  } else {
+    cart.push(current_product);
+  }
+  
+  localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
 }
 
@@ -77,7 +86,7 @@ function updateCartCount() {
   
   if(cart.length > 0) {
     for (var i = 0; i < cart.length; i++) {
-      quantity = quantity + parseInt(cart[i].quantity )
+      quantity = quantity + parseInt(cart[i].quantity)
     }
     count.innerText = quantity;
     count.style.visibility = 'visible';

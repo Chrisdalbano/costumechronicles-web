@@ -61,29 +61,6 @@ function updateCartTotal() {
   cartTotal.innerText = '$' + total; 
 }
 
-function updateCartTotal() {
-  var cart = JSON.parse(localStorage.getItem('cart'));
-  var subTotal = 0;
-  var tax = 0;
-  var total = 0;
-  
-  for (var i = 0; i < cart.length; i++) {
-    total += cart[i].price * cart[i].quantity;
-  }
-  
-  subTotal = Math.round(total * 100) / 100;
-  var cartSubTotal = document.querySelector('.subTotal');
-  cartSubTotal.innerText = '$' + subTotal;
-
-  tax = (total * 0.06);
-  var cartTax = document.querySelector('.tax');
-  cartTax.innerText = '$' + tax.toFixed(2);
-
-  total = Math.round((total + tax) * 100) / 100;
-  var cartTotal = document.querySelector('.total');
-  cartTotal.innerText = '$' + total; 
-}
-
 function displayCart() {
   var cart = JSON.parse(localStorage.getItem('cart'));
   for ( var i = 0 ; i < cart.length; i++ ) {

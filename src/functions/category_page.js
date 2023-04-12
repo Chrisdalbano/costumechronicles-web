@@ -6,19 +6,10 @@ if (document.readyState == 'loading') {
   
 function ready() {
     var products = JSON.parse(localStorage.getItem('products')); 
-    var women = [];
-    var men = [];
-    var kids = [];
-    var collectibles = [];
-
-    for(var i = 0; i < products.length; i++) {
-        switch (products[i].category) {
-            case "women": women.push(products[i]); break;
-            case "men": men.push(products[i]); break;
-            case "kids": kids.push(products[i]); break;
-            case "collectibles": collectibles.push(products[i]); break;
-        }
-    }
+    var women = JSON.parse(localStorage.getItem('women'));
+    var men = JSON.parse(localStorage.getItem('men'));
+    var kids = JSON.parse(localStorage.getItem('kids'));
+    var collectibles = JSON.parse(localStorage.getItem('collectibles'));
 
     var url = window.location.pathname;
     var folder = url.substring(url.indexOf('/'), url.lastIndexOf('/'));
@@ -42,10 +33,8 @@ function ready() {
         category_item.addEventListener("click", event => {
         var productImg = event.currentTarget.querySelector('img').src;
         localStorage.setItem('productImg', productImg);
-
         var productName = event.currentTarget.querySelector('h3').innerText;
         localStorage.setItem('productName', productName);
-
         var productPrice =  event.currentTarget.querySelector('b').innerText;
         localStorage.setItem('productPrice', productPrice);
 
@@ -70,4 +59,4 @@ function displayProducts(products) {
     }
     container.appendChild(Object.assign(document.createElement('p'), 
                 {id:"no-results-label", innerText:"No results matching the search."}));
-  }
+}

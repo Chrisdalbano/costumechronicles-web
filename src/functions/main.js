@@ -7,13 +7,12 @@ if (document.readyState == 'loading') {
   }
 
 function ready() {
-
   if(!localStorage.getItem('cart')) {
     localStorage.setItem('cart', JSON.stringify([]));
   }
 
   /*reads temp_database.json and stores it in the local storage*/
-  var products = database.products;
+  const products = database.products;
   localStorage.setItem('products', JSON.stringify(products));
 
   var women = [];
@@ -29,6 +28,7 @@ function ready() {
         case "collectibles": collectibles.push(products[i]); break;
     }
   }
+  displayProducts();
 
   localStorage.setItem('products', JSON.stringify(products));
   localStorage.setItem('women', JSON.stringify(women));
@@ -40,16 +40,42 @@ function ready() {
   const galleryBtn = document.querySelector('#galleryBtn');
   galleryBtn.addEventListener('click', event => {
   var gallery = event.currentTarget.parentElement.parentElement.parentElement;
-
   var productImg = gallery.querySelector('#current-image').src;
   localStorage.setItem('productImg', productImg);
-
   var productName = gallery.querySelector('#current-name').innerText;
   localStorage.setItem('productName', productName);
-
   var productPrice = gallery.querySelector('#current-price').innerText;
   localStorage.setItem('productPrice', productPrice);
 
   window.location.href = "./merch-page.html";
   });
+
+  /*add eventlistener to all products in index.html*/
+  var merchandise = document.querySelectorAll(".product");
+  for (var i = 0; i < merchandise.length; i++) {
+    merchandise[i].addEventListener('click', event => {
+      var current_id = event.currentTarget.getAttribute('id');
+      var current_product = products[current_id];
+      localStorage.setItem('current_product', JSON.stringify(current_product));
+      
+      window.location.href = "./merch-page.html";
+    });
+  }
+}
+
+function displayProducts() {
+  var products = JSON.parse(localStorage.getItem('products'));
+  for ( var i = 0 ; i < 6; i++ ) {
+    var item = products[i];
+    var container = document.querySelector('.product-grid');
+    container.appendChild(Object.assign(document.createElement('div'), 
+        {className:'product', id:item.product_id}));
+    var product = document.querySelectorAll('.product')[i];
+    product.appendChild(Object.assign(document.createElement('img'), 
+        {className:'product-image', src:item.image}));
+    product.appendChild(Object.assign(document.createElement('h3'), 
+        {className:'product-name', innerText:item.product_name}));
+    product.appendChild(Object.assign(document.createElement('b'),
+        {className:'product-price', innerText: "$" + item.price}));    
+  }
 }

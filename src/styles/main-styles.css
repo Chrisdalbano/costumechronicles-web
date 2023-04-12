@@ -88,6 +88,7 @@ main {
   text-align: center;
   background-color: white;
   box-shadow: 0px 0px 10px darkred;
+  padding: 10px;
 }
 
 .product:hover {
@@ -95,7 +96,7 @@ main {
   cursor: pointer;
 }
 
-.product img {
+.product-image {
   width: 400px;
   height: 500px;
   object-fit: cover;
@@ -103,14 +104,12 @@ main {
   margin: 10px;
 }
 
-.product h3 {
-  margin-top: 0.5rem;
+.product-name, .product-price {
+  margin:10px;
 }
 
-.product p {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: #999;
+.product-price {
+  color: rgb(158, 158, 158);
 }
 
 .grid-button {
@@ -233,15 +232,6 @@ main {
   .category p {
     font-size: 26px;
     bottom: 6rem;
-  }
-
-  .product-grid {
-    grid-template-columns: auto auto;
-  }
-
-  .product img {
-    width: 200px;
-    height: 250px;
   }
 }
 

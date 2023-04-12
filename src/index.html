@@ -120,12 +120,12 @@
     <main>
       <p>Connected to the API? : <b id="name"> X</b></p>
       
-    <script>
+    <!--<script>
       (async function() {
         const { text } = await (await fetch('/api/message')).json();
         document.querySelector('#name').textContent = text;
       }());
-    </script>
+    </script>-->
 
       <!--Categories display-->
       <section class="rectangle">
@@ -174,14 +174,8 @@
       <script src="functions/swapper.js"></script>
 
       <!-- Product grid display -->
-        <div class="product-grid ">
-          <article class="product">
-            <img class="product-image" src="./merch/woman-costume-1.jpg" alt="Item 1" id="woman01"/>
-            <h3 class="product-name" id="productNameTest">Item 1</h3>
-            <p class="product-price" id="productPriceTest">$10.99</p>
-        </article>
-        
-        <script>
+      <div class="product-grid">
+        <!--<script>
             async function fetchProductData() {
                 try {
                     const response = await fetch('/api/message');
@@ -194,37 +188,11 @@
                 }
             }
             fetchProductData();
-        </script>
-
-          <article class="product">
-            <img class="product-image" src="./merch/men-costume-1.jpg" alt="Item 2" id="men02"/>
-            <h3 class="product-name">Item 2</h3>
-            <p class="product-price">$9.99</p>
-          </article>
-          <article class="product">
-            <img class="product-image" src="./merch/collectible-1.jpeg" alt="Item 3" id="coll01"/>
-            <h3 class="product-name">Item 3</h3>
-            <p class="product-price">$12.99</p>
-          </article>
-          <article class="product">
-            <img class="product-image" src="./merch/men-costume-2.jpg" alt="Item 4" id="men01"/>
-            <h3 class="product-name">Item 4</h3>
-            <p class="product-price">$14.99</p>
-          </article>
-          <article class="product">
-            <img class="product-image" src="./merch/woman-costume-2.jpg" alt="Item 5" id="woman02"/>
-            <h3 class="product-name">Item 5</h3>
-            <p class="product-price">$11.99</p>
-          </article>
-          <article class="product">
-            <img class="product-image" src="./merch/woman-costume-3.jpg" alt="Item 6" id="woman03"/>
-            <h3 class="product-name">Item 6</h3>
-            <p class="product-price">$15.99</p>
-          </article>
-        </div>
-        <div class="grid-button">
-          <button class="buttondesc" onclick="window.location.href='./category-new.html';">View more</button>
-        </div>
+        </script>-->
+      </div>
+      <div class="grid-button">
+        <button class="buttondesc" onclick="window.location.href='./category-new.html';">View more</button>
+      </div>
     </main>
     <!-- <script src="functions/main-connection.js" defer></script> -->
     <footer>

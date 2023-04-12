@@ -5,46 +5,39 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
+  var products = JSON.parse(localStorage.getItem('products')); 
+  var current_product = JSON.parse(localStorage.getItem('current_product'));
   
   /*Set the atributes of the current product*/
-  var productImg = localStorage.getItem('productImg');
-  document.getElementById('currentMerch').src = productImg;
-  var productName = localStorage.getItem('productName');
-  document.getElementById('product-name').innerText = productName;
-  var productPrice = localStorage.getItem('productPrice');
-  document.getElementById('product-price').innerText = productPrice;
+  document.getElementById('currentMerch').src = current_product.image;
+  document.getElementById('product-name').innerText = current_product.product_name;
+  document.getElementById('product-price').innerText = "$" + current_product.price;
 
   /*display products base on the current product category*/
-  var products = JSON.parse(localStorage.getItem('products')); 
   var women = JSON.parse(localStorage.getItem('women'));
   var men = JSON.parse(localStorage.getItem('men'));
   var kids = JSON.parse(localStorage.getItem('kids'));
   var collectibles = JSON.parse(localStorage.getItem('collectibles'));
 
-  switch(url){
-      case folder + "/category-women.html": displayProducts(women); break;
-      case folder + "/category-men.html": displayProducts(men); break;
-      case folder + "/category-kids.html": displayProducts(kids); break;
-      case folder + "/category-collectibles.html": displayProducts(collectibles); break;
-      case folder + "/category-new.html": displayProducts(products); break;
+  switch(current_product.category){
+      case "women": displayProducts(women); break;
+      case "men": displayProducts(men); break;
+      case "kids": displayProducts(kids); break;
+      case "collectibles": displayProducts(collectibles); break;
+      default : displayProducts(products); break;
   }
 
   /*add event listener to all merchandise*/ 
   const merchandise = document.getElementsByClassName('product');
   for (var i = 0; i < merchandise.length; i++) {
     merchandise[i].addEventListener('click', event => {
-      var merchImg = event.currentTarget.querySelector('.product-image').src;
-      localStorage.setItem('productImg', merchImg);
-      var merchName = event.currentTarget.querySelector('.product-name').innerText;
-      localStorage.setItem('productName', merchName);
-      var merchPrice =  event.currentTarget.querySelector('.product-price').innerText;
-      localStorage.setItem('productPrice', merchPrice);
+      var merch_id = event.currentTarget.id;
+      localStorage.setItem('current_product', JSON.stringify(products[merch_id]));
       window.location.reload();
     });
   }
 
-  /*add event listener to all size buttons*/ 
-  const price = parseFloat(productPrice.replace('$', ''));
+  /*add event listener to add button*/ 
   const addToCartButton = document.querySelector('#addButton');
   addToCartButton.addEventListener('click', event => {
     const sizeRadio = document.querySelectorAll('.btn-check');
@@ -92,11 +85,12 @@ function updateCartCount() {
 }
 
 function displayProducts(products) {
+  var container = document.querySelector('.merch-gallery');
+  
   for ( var i = 0 ; i < products.length; i++ ) {
     var item = products[i];
-    var container = document.querySelector('merch-gallery');
     container.appendChild(Object.assign(document.createElement('div'), 
-        {className:'product'}));
+        {className:'product', id:item.product_id}));
     var product = document.querySelectorAll('.product')[i];
     product.appendChild(Object.assign(document.createElement('img'), 
         {className:'product-image', src:item.image}));

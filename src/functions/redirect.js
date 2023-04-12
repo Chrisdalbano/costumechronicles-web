@@ -16,23 +16,6 @@ function ready() {
       redirectToWebsite(event.currentTarget.id);
     });
   });
-
-  /*add eventlistener to all products in index.html*/
-  const product = document.querySelectorAll(".product", ".incategory-product");
-  product.forEach(product => {
-    product.addEventListener("click", event => {
-      var productImg = event.currentTarget.querySelector('.product-image').src;
-      localStorage.setItem('productImg', productImg);
-
-      var productName = event.currentTarget.querySelector('.product-name').innerText;
-      localStorage.setItem('productName', productName);
-
-      var productPrice =  event.currentTarget.querySelector('.product-price').innerText;
-      localStorage.setItem('productPrice', productPrice);
-
-      window.location.href = "./merch-page.html";
-    });
-  });
 }
 
 function redirectToWebsite(categoryId) {
@@ -56,3 +39,5 @@ function redirectToWebsite(categoryId) {
       break;
   }
 }
+
+

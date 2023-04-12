@@ -87,7 +87,6 @@ main {
 .product {
   text-align: center;
   background-color: white;
-  box-shadow: 0px 0px 10px darkred;
   padding: 10px;
 }
 
@@ -105,11 +104,13 @@ main {
 }
 
 .product-name, .product-price {
-  margin:10px;
+  margin:5px;
+  font-size: 17px;
 }
 
 .product-price {
   color: rgb(158, 158, 158);
+  font-size: 14px;
 }
 
 .grid-button {

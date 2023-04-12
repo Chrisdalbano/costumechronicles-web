@@ -63,12 +63,14 @@
     position: absolute;
     top: 135vh;
     left: 8vw;
+    font-size: 80px;
   }
 
   .right-arrow {
     position: absolute;
     top: 135vh;
     right: 8vw;
+    font-size: 80px;
   } 
 
   .buttondesc {

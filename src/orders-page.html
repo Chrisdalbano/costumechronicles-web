@@ -11,6 +11,7 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="functions/cart_update.js" async></script>
     <script src="functions/trackOrder.js" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
     <title>Costume Chronicles</title>
   </head>
@@ -102,25 +103,25 @@
     </header>
 
     <main>
-      
+      <p>You can track your current orders by either filling the information below or accessing to your account</p>
+      <div class="icon-container">
+        <i class="fas fa-truck" id="red-truck-icon"></i>
+      </div>
         <div class="wrapper">
           <h1>Track Your Order</h1>
           <form id="status">
-            <input type="text" name="orderNumber" id="orderNumber" placeholder="Order Number*" maxlength="10" required>
-            <input type="email" name="orderEmail" id="orderEmail" placeholder="Email*" required>
+            <input type="text" name="orderNumber" id="orderNumber" placeholder="Order #" maxlength="10" required>
+            <input type="email" name="orderEmail" id="orderEmail" placeholder="Email" required>
             <input type="text" name="orderZipCode" id="orderZipCode" placeholder="Order Zip Code*" required>
             <input type="submit" value="Check Status">
           </form>
 
-          <h1>Returning Customer</h1>
+          <h1>Already have an account?</h1>
           <form>
-            <input type="email" name="orderEmail" id="orderEmail" placeholder="Email*" required>
-            <input type="password" name="orderPassword" id="orderPassword" placeholder="Password*" required>
+            <input type="email" name="orderEmail" id="orderEmail" placeholder="Username or email" required>
+            <input type="password" name="orderPassword" id="orderPassword" placeholder="Password" required>
             <div>
-              <div>
-                <input type="checkbox" name="rememberMe" id="rememberMe">
-                <label for="rememberMe">Remember me</label>
-              </div>
+              
               <a href="#">Forgot Password?</a>
             </div>
             <input type="submit" value="Sign In">

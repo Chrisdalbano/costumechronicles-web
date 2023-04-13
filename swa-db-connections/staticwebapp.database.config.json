@@ -1,8 +1,11 @@
 {
-  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.6.13/dab.draft.schema.json",
+  "$schema": "https://dataapibuilder.azureedge.net/schemas/latest/dab.draft.schema.json",
   "data-source": {
     "database-type": "mysql",
-    "connection-string": ""
+    "options": {
+      "set-session-context": false 
+    },
+    "connection-string": "@env('DATABASE_CONNECTION_STRING')"
   },
   "runtime": {
     "rest": {
@@ -17,7 +20,7 @@
     "host": {
       "mode": "production",
       "cors": {
-        "origins": [],
+        "origins": ["http://localhost:4280"],
         "allow-credentials": false
       },
       "authentication": {
@@ -25,5 +28,15 @@
       }
     }
   },
-  "entities": {}
+  "entities": {
+    "Person": {
+      "source": "costumer_info",
+      "permissions": [
+        {
+          "actions": ["*"],
+          "role": "anonymous"
+        }
+      ]
+    }
+  }
 }

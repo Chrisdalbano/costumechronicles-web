@@ -1,14 +1,14 @@
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 main {
   display: block;
-  padding: 10% 20px 20px 20px; 
+  padding: 10% 20px 20px 20px;
 }
 
 .wrapper {
@@ -22,16 +22,15 @@ main {
   width: 30vw;
   margin: auto;
   margin-bottom: 20px;
-  color: white;
-  background-color: darkred;
   border-radius: 10px;
+  font-size:2rem;
 }
 
 .wrapper form {
   display: flex;
   flex-flow: column;
-  width: 30vw;
-  gap: 20px;
+  width: 25vw;
+  gap: 10px;
   margin: auto;
   margin-bottom: 100px;
 }
@@ -46,7 +45,53 @@ main {
   font-size: medium;
 }
 
-.wrapper input[type="submit"] {
-  color: white;
-  background-color: black;
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input[type="submit"] {
+  width: 100%;
+    padding: 10px;
+    background-color: #E42217;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#red-truck-icon {
+  color: red;
+  font-size: 48px;
+}
+
+/* Add this line to your existing .wrapper style */
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  /* Add this line */
+  text-align: center;
+}
+
+p {
+  
+  
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+  padding: 2rem;
+
 }

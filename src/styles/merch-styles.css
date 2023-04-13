@@ -27,8 +27,8 @@ main {
 }
 
 .merchandise img {
-  width: 60%;
-  height: 1000px;
+  width: 400px;
+  height: 600px;
   object-fit: cover;
   object-position: top;
   border: solid white;

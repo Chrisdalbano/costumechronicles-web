@@ -5,13 +5,18 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-  var products = JSON.parse(localStorage.getItem('products')); 
-  var current_product = JSON.parse(localStorage.getItem('current_product'));
+  const products = JSON.parse(localStorage.getItem('products')); 
+  const current_product = JSON.parse(localStorage.getItem('current_product'));
   
   /*Set the atributes of the current product*/
   document.getElementById('currentMerch').src = current_product.image;
   document.getElementById('product-name').innerText = current_product.product_name;
   document.getElementById('product-price').innerText = "$" + current_product.price;
+
+  /*change the addres section*/
+  var string = "Home/" + current_product.category + "/" + current_product.product_name;
+  const address = document.querySelector('.address');
+  address.innerText = string;
 
   /*display products base on the current product category*/
   var women = JSON.parse(localStorage.getItem('women'));
@@ -31,6 +36,7 @@ function ready() {
   const merchandise = document.getElementsByClassName('product');
   for (var i = 0; i < merchandise.length; i++) {
     merchandise[i].addEventListener('click', event => {
+      event.preventDefault();
       var merch_id = event.currentTarget.id;
       localStorage.setItem('current_product', JSON.stringify(products[merch_id]));
       window.location.reload();
@@ -40,6 +46,7 @@ function ready() {
   /*add event listener to add button*/ 
   const addToCartButton = document.querySelector('#addButton');
   addToCartButton.addEventListener('click', event => {
+    event.preventDefault();
     const sizeRadio = document.querySelectorAll('.btn-check');
     for (var i = 0; i < sizeRadio.length; i++) {
       if (sizeRadio[i].checked) {
@@ -47,26 +54,35 @@ function ready() {
         break;
       }
     }
-    var item = {
-      'product_id':'',
-      'product_name':productName,
-      'price':price,
-      'size':size,
-      'image':productImg,
-      'quantity':1,
-    }
-    addToCart(item);
+    current_product["size"] = size;
+    current_product["quantity"] = 1;
+    addToCart(current_product);
   });
   updateCartCount();
 }
 
-function addToCart(currentProduct) {
-  if(localStorage.getItem('cart')) {
-    var cart = JSON.parse(localStorage.getItem('cart'));
-  }
-  cart.push(currentProduct);
-  localStorage.setItem('cart', JSON.stringify(cart));
+function addToCart(current_product) {
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  var match = false;
 
+  if (cart.length > 0) {
+    for (var i = 0; i < cart.length; i++) {
+      if(cart[i].product_id == current_product.product_id && cart[i].size == current_product.size) {
+        match = true;
+        cart[i].quantity += 1;
+        break;
+      }
+    }
+
+    if (!match) {
+      cart.push(current_product);
+    };
+
+  } else {
+    cart.push(current_product);
+  }
+  
+  localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
 }
 
@@ -77,7 +93,7 @@ function updateCartCount() {
   
   if(cart.length > 0) {
     for (var i = 0; i < cart.length; i++) {
-      quantity = quantity + parseInt(cart[i].quantity )
+      quantity = quantity + parseInt(cart[i].quantity)
     }
     count.innerText = quantity;
     count.style.visibility = 'visible';

@@ -9,16 +9,29 @@ function ready() {
   updateCartTotal();
   updateCartCount();
 
+  const products = JSON.parse(localStorage.getItem('products'));
+  displayProducts(products);
+
   var removeCartItemButtons = document.querySelectorAll('.btn-danger')
   for ( var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i];
-    button.addEventListener('click', removeCartItem);
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      removeCartItem(event);
+      updateCartCount();
+      updateCartTotal();
+    });
   }
 
   var quantityInputs = document.querySelectorAll('.quantity-input')
   for ( var i = 0; i < quantityInputs.length; i++) {
     var input = quantityInputs[i];
-    input.addEventListener('change', quantityChange);
+    input.addEventListener('change', event => {
+      event.preventDefault();
+      quantityChange(event);
+      updateCartCount();
+      updateCartTotal();
+    });
   }
 }
 
@@ -39,8 +52,7 @@ function quantityChange(event) {
       }
     }
   }
-  updateCartTotal();
-  updateCartCount();
+  
 }
 
 function removeCartItem(event) {
@@ -56,10 +68,7 @@ function removeCartItem(event) {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
   }
-
   buttonItem.remove();
-  updateCartTotal();
-  updateCartCount();
 }
 
 function updateCartTotal() {
@@ -91,9 +100,11 @@ function updateCartCount() {
     for (var i = 0; i < cart.length; i++) {
       quantity +=  parseInt(cart[i].quantity )
     }
-    console.log(quantity);
     count.innerText = quantity;
     count.style.visibility = 'visible';
+  } else {
+    count.innerText = 0;
+    count.style.visibility = 'hidden';
   }
 }
 
@@ -126,5 +137,23 @@ function displayCart() {
       {className:'quantity-input', type:'number', value:item.quantity}))
   section.appendChild(Object.assign(document.createElement('button'), 
       {className:'btn btn-danger', innerText:'Remove'}))
+  }
+}
+
+function displayProducts(products) {
+  var shuffledArray = products.sort((a, b) => 0.5 - Math.random());
+  var container = document.querySelector('.merch-gallery');
+  
+  for ( var i = 0 ; i < 6; i++ ) {
+    var item = shuffledArray[i];
+    container.appendChild(Object.assign(document.createElement('div'), 
+        {className:'product', id:item.product_id}));
+    var product = document.querySelectorAll('.product')[i];
+    product.appendChild(Object.assign(document.createElement('img'), 
+        {className:'product-image', src:item.image}));
+    product.appendChild(Object.assign(document.createElement('h3'), 
+        {className:'product-name', innerText:item.product_name}));
+    product.appendChild(Object.assign(document.createElement('b'),
+        {className:'product-price', innerText: "$" + item.price}));    
   }
 }

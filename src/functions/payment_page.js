@@ -8,11 +8,34 @@ function ready() {
   displayCart();
   updateCartTotal();
 
+  const products = JSON.parse(localStorage.getItem('products'));
+  displayProducts(products);
+
   var infoObj = JSON.parse(localStorage.getItem('shippingInfo'));
   var info = infoObj.address + ' ' + infoObj.address2 + ', ' + infoObj.city + ' ' + infoObj.state + ' - ' + infoObj.zip;
 
   var shippingInfo = document.getElementById('shippingInfo'); 
   shippingInfo.innerText = info;
+
+  /*add event listener to the billing checkbox*/
+  var billing = document.getElementsByName('billing')[0];
+  billing.addEventListener('change', event => {
+    event.preventDefault();
+    if (billing.checked) {
+      document.getElementById('billing_form').style.display = 'none';
+    } else {
+      document.getElementById('billing_form').style.display = 'flex';
+    }
+  });
+
+  /*add event listener to confirm payment*/
+  var payment = document.getElementById("confirm_payment");
+  payment.addEventListener('click', event => {
+    event.preventDefault();
+    console.log('payment clicked');
+    window.location.href = './order_sent.html';
+  });
+
 }
 
 function updateCartTotal() {
@@ -29,7 +52,7 @@ function updateCartTotal() {
   var cartSubTotal = document.querySelector('.subTotal');
   cartSubTotal.innerText = '$' + subTotal;
 
-  tax = (total * 0.06);
+  tax = (total * 0.065);
   var cartTax = document.querySelector('.tax');
   cartTax.innerText = '$' + tax.toFixed(2);
 
@@ -63,5 +86,23 @@ function displayCart() {
       {className:'product-price', innerText:item.price}))
     productInfo.appendChild(Object.assign(document.createElement('b'), 
       {className:'product-quantity', innerText:item.quantity}))
+  }
+}
+
+function displayProducts(products) {
+  var shuffledArray = products.sort((a, b) => 0.5 - Math.random());
+  var container = document.querySelector('.merch-gallery');
+  
+  for ( var i = 0 ; i < 6; i++ ) {
+    var item = shuffledArray[i];
+    container.appendChild(Object.assign(document.createElement('div'), 
+        {className:'product', id:item.product_id}));
+    var product = document.querySelectorAll('.product')[i];
+    product.appendChild(Object.assign(document.createElement('img'), 
+        {className:'product-image', src:item.image}));
+    product.appendChild(Object.assign(document.createElement('h3'), 
+        {className:'product-name', innerText:item.product_name}));
+    product.appendChild(Object.assign(document.createElement('b'),
+        {className:'product-price', innerText: "$" + item.price}));    
   }
 }

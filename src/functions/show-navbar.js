@@ -5,6 +5,7 @@ let lastScrollPosition = 0;
 navbar.classList.add('navbar-visible');
 
 window.addEventListener('scroll', () => {
+  event.preventDefault();
   const currentScrollPosition = window.pageYOffset;
 
   if (currentScrollPosition < lastScrollPosition) {

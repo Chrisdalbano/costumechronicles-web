@@ -54,6 +54,7 @@ function ready() {
   var merchandise = document.querySelectorAll(".product");
   for (var i = 0; i < merchandise.length; i++) {
     merchandise[i].addEventListener('click', event => {
+      event.preventDefault();
       var current_id = event.currentTarget.getAttribute('id');
       var current_product = products[current_id];
       localStorage.setItem('current_product', JSON.stringify(current_product));

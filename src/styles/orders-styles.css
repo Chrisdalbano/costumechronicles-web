@@ -14,14 +14,17 @@ main {
 .wrapper {
   display: block;
   text-align: center;
+  margin: 5rem;
 }
 
 .wrapper h1 {
   padding: 10px;
-  border-bottom: 2px solid darkred;
   width: 30vw;
   margin: auto;
   margin-bottom: 20px;
+  color: white;
+  background-color: darkred;
+  border-radius: 10px;
 }
 
 .wrapper form {

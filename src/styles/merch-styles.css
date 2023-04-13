@@ -11,7 +11,7 @@ main {
   padding: 7vw 20px 20px 20px; 
 }
 
-.address p {
+.address {
   color: darkred;
   border-bottom: 2px solid darkred;
 }

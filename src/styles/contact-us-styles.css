@@ -9,31 +9,59 @@ body {
 main {
     display: block;
     padding: 10% 20px 20px 20px; 
+    font-size: 20px;
 }
 
 .wrapper {
-    display: block;
-    text-align: center;
-    width: 70%;
     margin: auto;
+    margin-top: 10vh;
     margin-bottom: 40vh;
+    opacity: 90%;
 }
 
 .wrapper h1 {
     padding: 10px;
-    border-bottom: 2px solid darkred;
-}
-
-.wrapper > section {
-    margin-bottom: 10vh;
-    text-align: left;
+    color: white;
+    background-color: darkred;
 }
 
 .contact-container {
-    padding-top: 4rem;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 4rem;
+    gap: 4rem;
+    color: rgb(36, 36, 36);
 }
+
+.contact-container div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-container div spam {
+    color: darkred;
+}
+
+.contact-container textarea {
+    height: 8rem;
+}
+
+.contact-container input, .contact-container select {
+    opacity: 70%;
+}
+
+.contact-container button {
+    color: white;
+    background-color: black;
+    margin: auto;
+    width: 40%;
+    height: 4rem;
+    border-radius: 10px;
+}
+
+
 
 
 

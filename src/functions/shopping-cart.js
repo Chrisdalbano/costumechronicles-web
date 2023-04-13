@@ -16,6 +16,7 @@ function ready() {
   for ( var i = 0; i < removeCartItemButtons.length; i++) {
     var button = removeCartItemButtons[i];
     button.addEventListener('click', event => {
+      event.preventDefault();
       removeCartItem(event);
       updateCartCount();
       updateCartTotal();
@@ -26,6 +27,7 @@ function ready() {
   for ( var i = 0; i < quantityInputs.length; i++) {
     var input = quantityInputs[i];
     input.addEventListener('change', event => {
+      event.preventDefault();
       quantityChange(event);
       updateCartCount();
       updateCartTotal();

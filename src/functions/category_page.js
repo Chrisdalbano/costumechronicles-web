@@ -31,14 +31,12 @@ function ready() {
     const category_item = document.querySelectorAll(".incategory-product");
     category_item.forEach(category_item => {
         category_item.addEventListener("click", event => {
-        var productImg = event.currentTarget.querySelector('img').src;
-        localStorage.setItem('productImg', productImg);
-        var productName = event.currentTarget.querySelector('h3').innerText;
-        localStorage.setItem('productName', productName);
-        var productPrice =  event.currentTarget.querySelector('b').innerText;
-        localStorage.setItem('productPrice', productPrice);
-
-        window.location.href = "./merch-page.html";
+            event.preventDefault();
+            var current_id = event.currentTarget.getAttribute('id');
+            var current_product = products[current_id];
+            
+            localStorage.setItem('current_product', JSON.stringify(current_product));
+            window.location.href = "./merch-page.html";
         });
     });
 }
@@ -48,7 +46,7 @@ function displayProducts(products) {
     for ( var i = 0 ; i < products.length; i++ ) {
         var item = products[i];
         container.appendChild(Object.assign(document.createElement('div'), 
-            {className:'incategory-product'}));
+            {className:'incategory-product', id:item.product_id}));
         var product = document.getElementsByClassName('incategory-product')[i];
         product.appendChild(Object.assign(document.createElement('img'), 
             {className:'product-image', src:item.image}));

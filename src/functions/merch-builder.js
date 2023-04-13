@@ -13,6 +13,11 @@ function ready() {
   document.getElementById('product-name').innerText = current_product.product_name;
   document.getElementById('product-price').innerText = "$" + current_product.price;
 
+  /*change the addres section*/
+  var string = "Home/" + current_product.category + "/" + current_product.product_name;
+  const address = document.querySelector('.address');
+  address.innerText = string;
+
   /*display products base on the current product category*/
   var women = JSON.parse(localStorage.getItem('women'));
   var men = JSON.parse(localStorage.getItem('men'));
@@ -31,6 +36,7 @@ function ready() {
   const merchandise = document.getElementsByClassName('product');
   for (var i = 0; i < merchandise.length; i++) {
     merchandise[i].addEventListener('click', event => {
+      event.preventDefault();
       var merch_id = event.currentTarget.id;
       localStorage.setItem('current_product', JSON.stringify(products[merch_id]));
       window.location.reload();
@@ -40,6 +46,7 @@ function ready() {
   /*add event listener to add button*/ 
   const addToCartButton = document.querySelector('#addButton');
   addToCartButton.addEventListener('click', event => {
+    event.preventDefault();
     const sizeRadio = document.querySelectorAll('.btn-check');
     for (var i = 0; i < sizeRadio.length; i++) {
       if (sizeRadio[i].checked) {

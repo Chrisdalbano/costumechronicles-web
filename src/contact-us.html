@@ -105,20 +105,66 @@
       <div class="wrapper">
         <h1>Contact Us</h1>
         <p>We are here to help you with any questions or concerns you might have. Please feel free to contact us regarding our products, orders, or any other inquiries you may have. We are more than happy to assist you and ensure you have the best possible experience with Costume Chronicles.</p>
-        <div class="contact-container" style="display: flex; flex-direction: column; align-items: center;">
-          <label for="topic-selector" style="margin-top: 16px;"><b>Select a topic:</b></label>
-          <select id="topic-selector" style="width: 50%; margin-bottom: 16px;">
-              <option selected disabled><b>Choose a topic</b></option>
-              <option>Orders and Shipping</option>
-              <option>Product Information</option>
-              <option>Returns and Exchanges</option>
-              <option>Technical Support</option>
-              <option>Other Inquiries</option>
-          </select>
-          <label for="message-text"><b>Your message:</b></label>
-          <textarea id="message-text" style="width: 50%; height: 120px; margin-bottom: 16px;" placeholder="Type your message here..."></textarea>
-          <button type="submit" style="background-color: rgba(0, 0, 0, 0.85); color: white; border-radius: 10px;">Submit</button>
-        </div>
+        <form class="contact-container" id="myForm">
+          <div>
+            <label for="topic-selector"><spam>*</spam>Contact Email:</label>
+            <input type="text" name="email" id="email" required>
+          </div>
+          <div>
+            <label for="topic-selector"><spam>*</spam>Select a topic:</label>
+            <select name="topic-selector" id="subject" required>
+              <option selected disabled hidden>Choose a topic</option>
+              <option value="Orders and Shipping">Orders and Shipping</option>
+              <option value="Product Information">Product Information</option>
+              <option value="Returns and Exchanges">Returns and Exchanges</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Other Inquiries">Other Inquiries</option>
+            </select>
+          </div>
+          <div>
+            <label for="message-text"><spam>*</spam>Your message:</label>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+          </div>
+          <button type="submit">SUBMIT</button>
+        </form>
+
+
+        <!--email submition script-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script type="text/javascript">(function () {
+            emailjs.init("hs0baNagcAgV5iv6p");
+          })();
+        </script>
+        <script>
+          // listen to the form submission
+          document
+            .getElementById("myForm")
+            .addEventListener("submit", event => {
+              event.preventDefault();
+    
+              const serviceID = "service_k7bmzqa";
+              const templateID = "template_zoj12vj";
+              var email = document.getElementById("email").value;
+              var subject = document.getElementById("subject").value;
+              var message = document.getElementById("message").value;
+        
+              // send the email here
+              emailjs.send(serviceID, templateID, {
+                email: email,
+                subject: subject,
+                message: message,
+              }).then(
+                (response) => {
+                  console.log("SUCCESS!", response.status, response.text);
+                  alert("SUCCESS!");
+                },
+                (error) => {
+                  console.log("FAILED...", error);
+                  alert("FAILED...", error);
+                }
+              );
+            });
+        </script>
       </div>
     </main>
 

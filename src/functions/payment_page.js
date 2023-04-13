@@ -31,6 +31,7 @@ function ready() {
   /*add event listener to confirm payment*/
   var payment = document.getElementById("confirm_payment");
   payment.addEventListener('click', event => {
+    event.preventDefault();
     console.log('payment clicked');
     window.location.href = './order_sent.html';
   });

@@ -5,7 +5,7 @@
     "options": {
       "set-session-context": false 
     },
-    "connection-string": "@env('Server="ecommerce.mysql.database.azure.com";UserID = "admin_costumechronicles";Password="costumechronicles1!";Database="ecommerce"')"
+    "connection-string": "@env('DATABASE_CONNECTION_STRING')"
   },
   "runtime": {
     "rest": {
@@ -29,7 +29,7 @@
     }
   },
   "entities": {
-    "User": {
+    "Person": {
       "source": "costumer_info",
       "permissions": [
         {

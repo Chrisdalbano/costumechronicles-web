@@ -23,12 +23,13 @@ module.exports = async function (context, req) {
     try {
         console.log('Trying connection...');
         connection = await mysql.createConnection(config);
-        console.log('Succesfully connected.');
+        
         const [rows] = await connection.execute('SELECT `product_name`, `price` FROM products WHERE `product_id` = ?', [1]);
         context.res = {
             status: 200,
             body: rows[0],
         };
+        console.log('Succesfully connected.');
     } catch (err) {
         context.log('Error:', err); // Change this line
         context.res = {

@@ -45,10 +45,13 @@ module.exports = async function (context, req) {
     console.error("Error:", error);
     context.res = {
       status: 500,
-      body: {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         error: true,
         message: "Error: " + error.message,
-      },
+      }),
     };
   }
 };

@@ -244,3 +244,21 @@ main {
     height: 100vh;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .rectangle {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+
+  .product-image {
+    width: 100%;
+    height: auto;
+  }
+}

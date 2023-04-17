@@ -42,13 +42,13 @@ module.exports = async function (context, req) {
       body: "User registered successfully!",
     };
   } catch (error) {
-    console.error("Error connecting to the database:", error.message);
+    console.error("Error:", error);
     context.res = {
-        status: 500,
-        body: {
-          error: true,
-          message: "Error: " + error.message,
-        },
-      };
+      status: 500,
+      body: {
+        error: true,
+        message: "Error: " + error.message,
+      },
+    };
   }
 };

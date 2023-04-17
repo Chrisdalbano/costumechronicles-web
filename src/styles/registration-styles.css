@@ -18,7 +18,8 @@ p {
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 h2 {
@@ -67,4 +68,29 @@ input[type="submit"] {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .register-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 14px;
+    margin: 20px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input[type="submit"] {
+    font-size: 12px;
+  }
 }

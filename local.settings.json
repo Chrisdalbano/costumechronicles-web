@@ -1,6 +1,11 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "FUNCTIONS_WORKER_RUNTIME": "node"
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "DB_HOST": "ecommerce.mysql.database.azure.com",
+    "DB_USER": "admin_costumechronicles",
+    "DB_PASSWORD": "costumechronicles1!",
+    "DB_NAME": "ecommerce"
   }
 }

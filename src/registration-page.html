@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/header-styles.css" />
     <link rel="stylesheet" type="text/css" href="styles/footer-styles.css" />
+    <script src="backend/register-account.js" async></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -28,25 +29,58 @@
 
   <body>
     <main>
-      <div class="form-container">
-        <h2>Register</h2>
-        <p>Let's create your account filling out the information below</p>
-        <form action="/api/register" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <input type="submit" value="Register" />
-        </form>
+      <script src="functions/redirect.js" async></script>
+      <form id="register-form" class="register-form">
+        <div class="logo-col" id="logo">
+          <img src="assets/logo.png" alt="Logo" class="logo" />
+        </div>
+        <h2>Create your account</h2>
+        <p>Please fill out the required fields</p>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <input type="submit" value="Register" />
+      </form>
+      <div class="switch">
+        <p>
+          Already have an account? <a href="./login-page.html" id="signup-link">Join the chronicles!</a>
+        </p>
+        
       </div>
     </main>
+    <!-- <script>
+      document.getElementById("register-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+    
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+    
+        const response = await fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, email, password }),
+        });
+    
+        const result = await response.json();
+    
+        if (response.status === 200) {
+          alert("User registered successfully!");
+        } else {
+          alert("Error: " + result.message);
+        }
+      });
+    </script> -->
   </body>
 </html>

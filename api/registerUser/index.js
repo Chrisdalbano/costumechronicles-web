@@ -2,7 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const mysql = require("mysql2/promise");
 const bcrypt = require("bcrypt");
-require("dotenv").config();
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 module.exports = async function (context, req) {
   console.log("Request body:", req.body);

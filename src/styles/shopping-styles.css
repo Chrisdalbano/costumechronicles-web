@@ -8,7 +8,7 @@ font-family: Arial, sans-serif;
 
 main {
   display: block;
-  padding: 10% 20px 20px 20px; 
+  padding: 10vh 20px 20px 20px; 
 }
 
 .wrapper {
@@ -24,7 +24,7 @@ main {
 .review {
   display: grid;
   grid-template-columns: 60% auto;
-  grid-gap: 50px;
+  grid-gap: 3rem;
   margin-bottom: 100px;
 }
 
@@ -33,7 +33,7 @@ main {
   flex-direction: column;
   overflow: auto;
   height: 100vh;
-  gap: 40px;  
+  gap: 1vh;  
   border: 2px solid lightgray;
 }
 
@@ -62,8 +62,8 @@ main {
 
 .merchandise section {
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-between; 
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .quantity-input {
@@ -118,4 +118,14 @@ main {
   object-fit: cover;
   object-position: top;
   margin: 20px
+}
+
+@media screen and (max-width: 460px) {
+  .review {
+    grid-template-columns: auto;
+  }
+
+  .merch-container {
+    gap: 1vh;
+  }
 }

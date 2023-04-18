@@ -8,7 +8,7 @@ body {
 
 main {
   display: block;
-  padding: 7vw 20px 20px 20px; 
+  padding: 15vh 20px 20px 20px; 
 }
 
 .address p {
@@ -124,3 +124,44 @@ main {
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 9vh;
+  }
+
+  .category-wrapper p {
+    position: absolute;
+    top: 40vh;
+    left: 25vw;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 460px) {
+    .category-wrapper img {
+      width: 100%;
+      height: 80vh;
+    }
+
+    .category-wrapper p {
+      font-size: 3rem;
+      top: 40vh;
+      left: 25vw;
+    }
+
+    .container {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      margin-bottom: 1rem;
+    }
+
+    .product-image {
+      height: 300px;
+    }
+}

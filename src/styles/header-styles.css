@@ -64,7 +64,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 460px) {
   .logo {
     width: 130px;
   }

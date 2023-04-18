@@ -11,6 +11,8 @@ function ready() {
     localStorage.setItem("cart", JSON.stringify([]));
   }
 
+  updateCartCount();
+
   /*reads temp_database.json and stores it in the local storage*/
   const products = database.products;
   localStorage.setItem("products", JSON.stringify(products));
@@ -102,5 +104,19 @@ function displayProducts() {
         innerText: "$" + item.price,
       })
     );
+  }
+}
+
+function updateCartCount() {
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  var count = document.getElementById('item_count');
+  var quantity = 0
+  
+  if(cart.length > 0) {
+    for (var i = 0; i < cart.length; i++) {
+      quantity = quantity + parseInt(cart[i].quantity )
+    }
+    count.innerText = quantity;
+    count.style.visibility = 'visible';
   }
 }

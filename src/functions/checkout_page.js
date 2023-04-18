@@ -33,6 +33,8 @@ function ready() {
       "city": city,
       "state": state,
       "zip": zip,
+      "email": email,
+      "phone": phone
     }
 
     localStorage.setItem('shippingInfo', JSON.stringify(info));

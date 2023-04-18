@@ -14,12 +14,15 @@ function ready() {
     var shippingInfo = document.getElementById('shippingInfo'); 
     shippingInfo.innerText = info;
 
+    sendConfirmationEmail();
+
     /*add event listener to continue button*/
     var continueBtn = document.getElementById('continueBtn');
     continueBtn.addEventListener('click', function(e) {
         e.preventDefault();
         window.location.href = './index.html';
         localStorage.removeItem('cart');
+        localStorage.removeItem('shippingInfo');
     });
 
 }
@@ -74,4 +77,45 @@ function displayCart() {
         {className:'product-quantity', innerText:item.quantity}))
     }
 }
+
+function sendConfirmationEmail() {
+    emailjs.init("hs0baNagcAgV5iv6p");
+  
+    const serviceID = "service_k7bmzqa";
+    const templateID = "template_kgo7vxb";
+    const info = JSON.parse(localStorage.getItem('shippingInfo'));
+    /*const items = JSON.parse(localStorage.getItem('cart'));*/
+
+    var orderID = orderNumber();
+    var orderDate = new Date();
+    var address = info.address + ' ' + info.address2 + ', ' + info.city + ' ' + info.state + ' - ' + info.zip;
+    var total = document.getElementById("total").innerText.replace("$", "");
+    var email = info.email;
+    
+
+    // send the email here
+    emailjs.send(serviceID, templateID, {
+        orderID: orderID,
+        orderDate: orderDate,
+        address: address,
+        total: total,
+        email: email
+    }).then(
+    (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+    },
+    (error) => {
+        console.log("FAILED...", error);
+        alert("FAILED...", error);
+    }
+    );
+}
+
+function orderNumber() {
+    let now = Date.now().toString()
+    // pad with extra random digit
+    now += now + Math.floor(Math.random() * 10)
+    // format
+    return  [now.slice(0, 4), now.slice(4, 10), now.slice(10, 14)].join('-')
+  }
   

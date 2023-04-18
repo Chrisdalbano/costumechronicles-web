@@ -46,7 +46,7 @@ main {
 }
 
 #billing_form {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 20px;
 }

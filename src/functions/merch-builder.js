@@ -38,7 +38,7 @@ function ready() {
     merchandise[i].addEventListener('click', event => {
       event.preventDefault();
       var merch_id = event.currentTarget.id;
-      localStorage.setItem('current_product', JSON.stringify(products[merch_id]));
+      localStorage.setItem('current_product', JSON.stringify(products[merch_id - 1]));
       window.location.reload();
     });
   }

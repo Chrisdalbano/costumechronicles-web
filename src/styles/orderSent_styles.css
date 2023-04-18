@@ -7,13 +7,21 @@ body {
 }
 
 main {
-    display: block;
-    padding: 10% 20px 20px 20px; 
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
 .container > div {
@@ -80,4 +88,14 @@ main {
     text-align: center;
     color: darkgrey;
 }
-  
+
+.container button {
+    margin-top: 2rem;
+    width: 30rem;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 1rem;
+    color: white;
+    background-color: darkred;
+    border-radius: 20px;
+}

@@ -22,7 +22,7 @@ main {
 
 .category {
   width: 25%;
-  height: 50rem;
+  height: 100vh;
   transition: all 0.5s;
   position: relative;
 }

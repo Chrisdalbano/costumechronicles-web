@@ -13,6 +13,15 @@ function ready() {
 
     var shippingInfo = document.getElementById('shippingInfo'); 
     shippingInfo.innerText = info;
+
+    /*add event listener to continue button*/
+    var continueBtn = document.getElementById('continueBtn');
+    continueBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = './index.html';
+        localStorage.removeItem('cart');
+    });
+
 }
 
 function updateCartTotal() {

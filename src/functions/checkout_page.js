@@ -7,7 +7,6 @@ if (document.readyState == 'loading') {
 function ready() {
   displayCart();
   updateCartTotal();
-  updateCartCount();
 
   const products = JSON.parse(localStorage.getItem('products'));
   displayProducts(products);

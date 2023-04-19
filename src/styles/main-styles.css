@@ -68,6 +68,7 @@ main {
   grid-template-columns: auto auto auto;
   grid-gap: 30px;
   margin: 50px;
+  margin-top: 8rem;
 }
 
 .product {

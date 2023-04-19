@@ -1,24 +1,24 @@
 { "products": [
     {
         "product_id": 1,
-        "product_name": "Snow White Costume",
-        "price": 69.99,
+        "product_name": "Evangelion (Asuka) Costume",
+        "price": 149.99,
         "stock": 100,
-        "image":"./merch/woman-costume-1.jpg",
+        "image":"./merch/image1.jpg",
         "category": "women"
     },{
         "product_id": 2,
-        "product_name": "Spiderman Costume",
-        "price": 89.99,
+        "product_name": "Evil Boss Costume",
+        "price": 69.99,
         "stock": 100,
-        "image":"./merch/men-costume-1.jpg",
-        "category": "men"
+        "image":"./merch/image2.jpg",
+        "category": "women"
     },{
         "product_id": 3,
-        "product_name": "Nier: Automata Costume",
-        "price": 129.99,
+        "product_name": "SteamPunk Diva Costume",
+        "price": 169.99,
         "stock": 100,
-        "image":"./merch/woman-costume-2.jpg",
+        "image":"./merch/image3.jpg",
         "category": "women"
     },{
         "product_id": 4,
@@ -55,5 +55,26 @@
         "stock": 100,
         "image":"./merch/collectible-1.jpeg",
         "category": "collectibles"
+    },{
+        "product_id": 9,
+        "product_name": "Snow White Costume",
+        "price": 69.99,
+        "stock": 100,
+        "image":"./merch/woman-costume-1.jpg",
+        "category": "women"
+    },{
+        "product_id": 10,
+        "product_name": "Spiderman Costume",
+        "price": 89.99,
+        "stock": 100,
+        "image":"./merch/men-costume-1.jpg",
+        "category": "men"
+    },{
+        "product_id": 11,
+        "product_name": "Nier: Automata Costume",
+        "price": 129.99,
+        "stock": 100,
+        "image":"./merch/woman-costume-2.jpg",
+        "category": "women"
     }]
 }

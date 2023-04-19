@@ -107,9 +107,13 @@ main {
   text-align: center;
 }
 
-.merch-gallery div {
+.product {
   margin: 20px;
   box-shadow: 0px 0px 10px rgb(56, 5, 5);
+}
+
+.product:hover {
+  cursor: pointer;
 }
 
 .merch-gallery img {

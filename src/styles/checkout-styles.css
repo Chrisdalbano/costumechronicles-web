@@ -73,9 +73,13 @@ main {
   margin: 20px;
 }
 
+.product:hover {
+  cursor: pointer;
+}
+
 .product-image {
   width: 15vw;
-  height: 50vh;
+  height: 40vh;
   object-fit: cover;
   object-position: top;
 }

@@ -37,6 +37,18 @@ function ready() {
     window.location.href = './order_sent.html';
   });
 
+  /*add event listener to the product gallery */
+  const gallery_merch = document.querySelectorAll('.product');
+  gallery_merch.forEach(gallery_merch => {
+    gallery_merch.addEventListener("click", event => {
+        event.preventDefault();
+        var current_id = event.currentTarget.getAttribute('id');
+        var current_product = products[current_id - 1];
+        
+        localStorage.setItem('current_product', JSON.stringify(current_product));
+        window.location.href = "./merch-page.html";
+    });
+  });
 }
 
 function updateCartTotal() {
@@ -91,11 +103,10 @@ function displayCart() {
 }
 
 function displayProducts(products) {
-  var shuffledArray = products.sort((a, b) => 0.5 - Math.random());
   var container = document.querySelector('.merch-gallery');
   
   for ( var i = 0 ; i < 6; i++ ) {
-    var item = shuffledArray[i];
+    var item = products[i];
     container.appendChild(Object.assign(document.createElement('div'), 
         {className:'product', id:item.product_id}));
     var product = document.querySelectorAll('.product')[i];

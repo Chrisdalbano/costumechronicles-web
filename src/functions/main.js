@@ -49,15 +49,12 @@ function ready() {
   /*add event listener to the button of the slide gallery*/
   const galleryBtn = document.querySelector("#galleryBtn");
   galleryBtn.addEventListener("click", (event) => {
-    var gallery = event.currentTarget.parentElement.parentElement.parentElement;
-    var productImg = gallery.querySelector("#current-image").src;
-    localStorage.setItem("productImg", productImg);
-    var productName = gallery.querySelector("#current-name").innerText;
-    localStorage.setItem("productName", productName);
-    var productPrice = gallery.querySelector("#current-price").innerText;
-    localStorage.setItem("productPrice", productPrice);
+    event.preventDefault();
+    var current_id = event.currentTarget.parentElement.parentElement.querySelector(".swapper-gallery").id;
+    var current_product = products[current_id - 1];
+    localStorage.setItem("current_product", JSON.stringify(current_product));
 
-    window.location.href = "./merch-page.html";
+   window.location.href = "./merch-page.html";
   });
 
   /*add eventlistener to all products in index.html*/

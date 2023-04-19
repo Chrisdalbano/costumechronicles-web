@@ -44,8 +44,7 @@ function ready() {
         localStorage.setItem('current_product', JSON.stringify(current_product));
         window.location.href = "./merch-page.html";
     });
-});
-
+  });
 }
 
 function quantityChange(event) {

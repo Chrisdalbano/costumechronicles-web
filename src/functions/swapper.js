@@ -1,30 +1,20 @@
 
-const products = [{
-  'source':'./merch/image1.jpg',
-  'name':'Product #1',
-  'price':'$69.99'
-  },{
-    'source':'./merch/image2.jpg',
-    'name':'Product #2',
-    'price':'$69.99'
-  },{
-    'source':'./merch/image3.jpg',
-    'name':'Product #3',
-    'price':'$69.99'
-  }]
-
 var currentIndex = 0;
 
 function changeImage() {
-  var currentImage = document.getElementById("current-image");
-  var currentName = document.getElementById("current-name");
-  var currentPrice = document.getElementById("current-price");
+  const products = JSON.parse(localStorage.getItem("products"));
+  const product_container = document.getElementsByClassName("swapper-gallery")[0];
+  const currentImage = document.getElementById("current-image");
+  const currentName = document.getElementById("current-name");
+  const currentPrice = document.getElementById("current-price");
 
   currentImage.style.opacity = 0;
-  setTimeout(() => {
-    currentImage.src = products[currentIndex].source;
-    currentName.textContent = products[currentIndex].name;
-    currentPrice.textContent = products[currentIndex].price;
+
+  setTimeout(() =>{
+    currentImage.src = products[currentIndex].image;
+    currentName.textContent = products[currentIndex].product_name;
+    currentPrice.textContent = "$" + products[currentIndex].price;
+    product_container.id = products[currentIndex].product_id;
     currentImage.style.opacity = 1;
   }, 500);
 }
@@ -33,15 +23,16 @@ function changeImage() {
 function prevImage() {
   currentIndex--;
   if (currentIndex < 0) {
-    currentIndex = products.length - 1;
+    currentIndex = 2;
   }
   changeImage();
 }
 
 function nextImage() {
   currentIndex++;
-  if (currentIndex >= products.length) {
+  if (currentIndex >= 3) {
     currentIndex = 0;
   }
   changeImage();
 }
+

@@ -1,8 +1,8 @@
 .gallery-wrapper {
   display: flex;
-  gap: 2em;
+  gap: 2rem;
   justify-content: center;
-  margin-top: 3em;
+  margin-top: 10rem;
 }
 
 .swapper-gallery {
@@ -10,17 +10,19 @@
 }
 
 #current-image {
-  width: 1200px;
-  height: 700px;
+  width: 80vw;
+  height: 100vh;
   transition: opacity 0.5s ease-in-out;
   object-fit: cover;
+  object-position: top;
   border: 10px double darkred;
+  border-radius: 20px;
 }
 
 .left-arrow,
 .right-arrow {
-  font-size: 60px;
-  color: black;
+  font-size: 5rem;
+  color: rgb(56, 0, 0);
   cursor: pointer;
   background-color: transparent;
   border: none;

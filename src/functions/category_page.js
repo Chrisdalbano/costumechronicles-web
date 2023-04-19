@@ -33,7 +33,7 @@ function ready() {
         category_item.addEventListener("click", event => {
             event.preventDefault();
             var current_id = event.currentTarget.getAttribute('id');
-            var current_product = products[current_id];
+            var current_product = products[current_id - 1];
             
             localStorage.setItem('current_product', JSON.stringify(current_product));
             window.location.href = "./merch-page.html";

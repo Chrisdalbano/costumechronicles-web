@@ -86,12 +86,9 @@ input[type="submit"] {
   text-align: center;
 }
 
-p {
-  
-  
+main p {
   font-size: 1rem;
   display: block;
   text-align: center;
   padding: 2rem;
-
 }
